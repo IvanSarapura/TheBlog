@@ -9,7 +9,6 @@
 .header {
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -167,26 +166,18 @@
 /* Light mode - white thumb on black background */
 .toggle-switch.light .switch-thumb {
   background-color: #ffffff;
+  transform: translateX(0);
 }
 
 /* Dark mode - black thumb on white background */
 .toggle-switch.dark .switch-thumb {
   background-color: #000000;
-}
-
-/* Light mode (default) - thumb covers sun */
-.toggle-switch.light .switch-thumb {
-  transform: translateX(0);
-}
-
-/* Dark mode - thumb covers moon */
-.toggle-switch.dark .switch-thumb {
   transform: translateX(32px);
 }
 
 /* Hover effects */
 .toggle-switch.light:hover .switch-track {
-  background-color: #333333;
+  background-color: #000000;
 }
 
 .toggle-switch.dark:hover .switch-track {
@@ -198,7 +189,7 @@
 }
 
 .toggle-switch.dark:active .switch-thumb {
-  transform: scale(0.9) translateX(36px);
+  transform: scale(0.9) translateX(32px);
 }
 
 /* Main Content */
@@ -217,7 +208,7 @@
 }
 
 .hero-title {
-  font-size: clamp(5rem, 10vw, 10rem);
+  font-size: clamp(7.18rem, 14.35vw, 14.35rem);
   font-weight: 700;
   color: #000000;
   margin: 0;
@@ -263,7 +254,7 @@
   }
 
   .hero-title {
-    font-size: clamp(3.125rem, 7.5vw, 5rem);
+    font-size: clamp(4.78rem, 11.96vw, 7.18rem);
   }
 }
 

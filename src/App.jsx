@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import sunIcon from "./assets/sun.svg";
+import moonIcon from "./assets/moon-dark.svg";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,14 +56,14 @@ function App() {
                   <div className="switch-icons">
                     <div className="icon-container sun-icon">
                       <img
-                        src="/sun.svg"
+                        src={sunIcon}
                         alt="Light mode"
                         className="switch-icon"
                       />
                     </div>
                     <div className="icon-container moon-icon">
                       <img
-                        src="/moon-dark.svg"
+                        src={moonIcon}
                         alt="Dark mode"
                         className="switch-icon"
                       />
