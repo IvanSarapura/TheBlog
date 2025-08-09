@@ -104,15 +104,15 @@
   transition: all 0.3s ease;
 }
 
-/* Light mode - black pill (sun visible) */
+/* Light mode - white pill (sun visible) */
 .toggle-switch.light .switch-track {
-  background-color: #000000;
-}
-
-/* Dark mode - white pill (moon visible) */
-.toggle-switch.dark .switch-track {
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
+}
+
+/* Dark mode - black pill (moon visible) */
+.toggle-switch.dark .switch-track {
+  background-color: #000000;
 }
 
 .switch-icons {
@@ -141,14 +141,14 @@
   transition: all 0.3s ease;
 }
 
-/* Light mode - white icons on black background */
+/* Light mode - black icons on white background */
 .toggle-switch.light .switch-icon {
-  filter: brightness(0) invert(1); /* Makes icons white */
+  filter: brightness(0) invert(0); /* Makes icons black */
 }
 
-/* Dark mode - black icons on white background */
+/* Dark mode - white icons on black background */
 .toggle-switch.dark .switch-icon {
-  filter: brightness(0) invert(0); /* Makes icons black */
+  filter: brightness(0) invert(1); /* Makes icons white */
 }
 
 .switch-thumb {
@@ -163,25 +163,25 @@
   z-index: 2;
 }
 
-/* Light mode - white thumb on black background */
+/* Light mode - black thumb on white background */
 .toggle-switch.light .switch-thumb {
-  background-color: #ffffff;
+  background-color: #000000;
   transform: translateX(0);
 }
 
-/* Dark mode - black thumb on white background */
+/* Dark mode - white thumb on black background */
 .toggle-switch.dark .switch-thumb {
-  background-color: #000000;
+  background-color: #ffffff;
   transform: translateX(32px);
 }
 
 /* Hover effects */
 .toggle-switch.light:hover .switch-track {
-  background-color: #000000;
+  background-color: #f5f5f5;
 }
 
 .toggle-switch.dark:hover .switch-track {
-  background-color: #f5f5f5;
+  background-color: #333333;
 }
 
 .toggle-switch:active .switch-thumb {
@@ -202,9 +202,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 80px);
+  min-height: auto;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0.25rem;
 }
 
 .hero-title {
@@ -238,7 +238,7 @@
 
 /* Blog Section */
 .blog-section {
-  padding: 6rem 0;
+  padding: 1.5rem 0;
   background-color: #ffffff;
 }
 
@@ -252,7 +252,7 @@
   font-size: 2.25rem;
   font-weight: 600;
   color: #000000;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
@@ -454,7 +454,7 @@
   }
 
   .blog-section {
-    padding: 3rem 0;
+    padding: 0.75rem 0;
   }
 
   .container {
