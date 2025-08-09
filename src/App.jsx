@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app">
-      <header className="header">
+      <header className="header page-grid">
         <nav className="navbar">
           <div className="logo">Your Name</div>
           <div className="nav-right">
@@ -82,12 +82,12 @@ function App() {
       </header>
 
       <main className="main-content">
-        <div className="hero-container">
+        <div className="hero-container page-grid">
           <h1 className="hero-title">THE BLOG</h1>
         </div>
 
         {/* First Blog Section */}
-        <section className="blog-section">
+        <section className="blog-section page-grid">
           <div className="container">
             <h2 className="section-heading">Recent blog posts</h2>
             <div className="blog-grid">
