@@ -176,6 +176,15 @@ function App() {
             <div
               className={`mobile-menu-overlay ${mobileMenuOpen ? "open" : ""}`}
             >
+              {/* Close Button */}
+              <button
+                className="mobile-menu-close"
+                onClick={toggleMobileMenu}
+                aria-label="Close mobile menu"
+              >
+                ×
+              </button>
+
               <ul className="mobile-menu">
                 <li>
                   <span
@@ -244,12 +253,14 @@ function App() {
                 </div>
                 <div className="card-content">
                   <div className="card-header">
-                    <h3 className="card-title">UX review presentations</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
+                    <h3 className="card-title">
+                      UX review presentations
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
+                    </h3>
                   </div>
                   <div className="card-meta">
                     <span className="author">Olivia Rhye</span>
@@ -277,12 +288,14 @@ function App() {
                   </div>
                   <div className="card-content">
                     <div className="card-header">
-                      <h3 className="card-title">Migrating to Linear 101</h3>
-                      <img
-                        src={arrowIcon}
-                        alt="Read more"
-                        className="arrow-icon"
-                      />
+                      <h3 className="card-title">
+                        Migrating to Linear 101
+                        <img
+                          src={arrowIcon}
+                          alt="Read more"
+                          className="arrow-icon"
+                        />
+                      </h3>
                     </div>
                     <div className="card-meta">
                       <span className="author">Phoenix Baker</span>
@@ -305,12 +318,14 @@ function App() {
                   </div>
                   <div className="card-content">
                     <div className="card-header">
-                      <h3 className="card-title">Building your API Stack</h3>
-                      <img
-                        src={arrowIcon}
-                        alt="Read more"
-                        className="arrow-icon"
-                      />
+                      <h3 className="card-title">
+                        Building your API Stack
+                        <img
+                          src={arrowIcon}
+                          alt="Read more"
+                          className="arrow-icon"
+                        />
+                      </h3>
                     </div>
                     <div className="card-meta">
                       <span className="author">Lana Steiner</span>
@@ -346,12 +361,12 @@ function App() {
                   <div className="card-header">
                     <h3 className="card-title">
                       Grid system for better Design User Interface
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
                     </h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
                   </div>
                   <div className="card-meta">
                     <span className="author">Olivia Rhye</span>
@@ -381,18 +396,21 @@ function App() {
               {/* Row 1 */}
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image5} alt="Bill Walsh leadership lessons" />
+                  <img
+                    src={image5}
+                    alt="Bill Walsh leadership lessons of finance and business"
+                  />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Bill Walsh leadership lessons
+                      Bill Walsh leadership lessons of finance and business
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
                     </h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
                   </div>
                   <div className="card-meta">
                     <span className="author">Alec Whitten</span>
@@ -415,16 +433,21 @@ function App() {
 
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image6} alt="PM mental models" />
+                  <img
+                    src={image6}
+                    alt="PM mental models for product managers"
+                  />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
-                    <h3 className="card-title">PM mental models</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
+                    <h3 className="card-title">
+                      PM mental models for product managers
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
+                    </h3>
                   </div>
                   <div className="card-meta">
                     <span className="author">Demi Wilkinson</span>
@@ -446,16 +469,21 @@ function App() {
 
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image7} alt="What is Wireframing?" />
+                  <img
+                    src={image7}
+                    alt="What is Wireframing in the tech industry?"
+                  />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
-                    <h3 className="card-title">What is Wireframing?</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
+                    <h3 className="card-title">
+                      What is Wireframing in the tech industry?
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
+                    </h3>
                   </div>
                   <div className="card-meta">
                     <span className="author">Candice Wu</span>
@@ -484,12 +512,12 @@ function App() {
                   <div className="card-header">
                     <h3 className="card-title">
                       How collaboration makes us better designers
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
                     </h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
                   </div>
                   <div className="card-meta">
                     <span className="author">Natali Craig</span>
@@ -517,12 +545,12 @@ function App() {
                   <div className="card-header">
                     <h3 className="card-title">
                       Our top 10 Javascript frameworks to use in 2025
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
                     </h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
                   </div>
                   <div className="card-meta">
                     <span className="author">Drew Cano</span>
@@ -553,12 +581,12 @@ function App() {
                   <div className="card-header">
                     <h3 className="card-title">
                       Podcast: Creating a better CX Community
+                      <img
+                        src={arrowIcon}
+                        alt="Read more"
+                        className="arrow-icon"
+                      />
                     </h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
                   </div>
                   <div className="card-meta">
                     <span className="author">Orlando Diggs</span>
