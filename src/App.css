@@ -425,6 +425,7 @@
 .main-card {
   grid-row: 1;
   align-self: start;
+  border: 1px solid #f0f0f0;
 }
 
 .secondary-cards {
