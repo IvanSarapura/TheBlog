@@ -30,11 +30,65 @@
   --color-background-disabled: #cccccc;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  /* Primary Backgrounds */
+  --color-background-white: #0f0f0f;
+  --color-background-light: #1a1a1a;
+  --color-background-gray: #1a1a1a;
+  --color-background-medium: #262626;
+  --color-background-dark: #333333;
+
+  /* Text Colors */
+  --color-primary-text: #ffffff;
+  --color-secondary-text: #e5e5e5;
+  --color-tertiary-text: #b3b3b3;
+  --color-card-text: #b3b3b3;
+
+  /* Borders */
+  --color-border-light: #333333;
+  --color-border-medium: #404040;
+  --color-border-dark: #555555;
+  --color-border-gray: #666666;
+
+  /* Category Badge Backgrounds (darker versions) */
+  --color-design-category-bg: rgba(105, 65, 198, 0.2);
+  --color-research-category-bg: rgba(53, 56, 205, 0.2);
+  --color-presentation-category-bg: rgba(193, 21, 116, 0.2);
+  --color-product-category-bg: rgba(2, 106, 162, 0.2);
+  --color-frameworks-category-bg: rgba(2, 122, 72, 0.2);
+  --color-interface-category-bg: rgba(192, 16, 72, 0.2);
+  --color-management-category-bg: rgba(54, 63, 114, 0.2);
+
+  /* Category Badge Text (keep original colors for contrast) */
+  --color-design-category-text: #a78bfa;
+  --color-research-category-text: #818cf8;
+  --color-presentation-category-text: #f472b6;
+  --color-product-category-text: #60a5fa;
+  --color-frameworks-category-text: #34d399;
+  --color-interface-category-text: #fb7185;
+  --color-management-category-text: #a5b4fc;
+}
+
 /* App Container */
 .app {
   min-height: 100vh;
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
+  color: var(--color-primary-text);
+  background-color: var(--color-background-white);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode color scheme */
+[data-theme="dark"] .app {
+  color-scheme: dark;
+}
+
+/* Global transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Global Grid System - Sistema de columnas responsivo */
@@ -180,23 +234,26 @@
   position: relative;
   width: 68px;
   height: 36px;
-  background-color: var(--color-primary-text);
+  background-color: transparent;
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  box-shadow: none;
 }
 
-/* Light mode - black pill (sun visible) */
+/* Light mode - black pill with white moon visible */
 .toggle-switch.light .switch-track {
-  background-color: var(--color-primary-text);
+  background-color: #1a1a1a;
+  border: none;
 }
 
-/* Dark mode - white pill (moon visible) */
+/* Dark mode - white pill with black sun visible */
 .toggle-switch.dark .switch-track {
-  background-color: var(--color-background-white);
+  background-color: #ffffff;
   border: 1px solid var(--color-border-medium);
 }
 
@@ -238,33 +295,55 @@
   z-index: 2;
 }
 
-/* Light mode - white thumb on black background (covering moon) */
+/* Light mode - white thumb on black background (covering sun, moon visible) */
 .toggle-switch.light .switch-thumb {
-  background-color: var(--color-background-white);
+  background-color: #ffffff;
   transform: translateX(32px);
 }
 
-/* Dark mode - black thumb on white background (covering sun) */
+/* Dark mode - black thumb on white background (covering moon, sun visible) */
 .toggle-switch.dark .switch-thumb {
-  background-color: var(--color-primary-text);
+  background-color: #1a1a1a;
   transform: translateX(0);
 }
 
-/* Hover effects */
+/* Hover effects - COMPLETELY SEPARATE for each mode */
 .toggle-switch.light:hover .switch-track {
-  background-color: var(--color-background-dark);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(128, 128, 128, 0.015);
 }
 
 .toggle-switch.dark:hover .switch-track {
-  background-color: var(--color-background-medium);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.012);
 }
 
-.toggle-switch:active .switch-thumb {
+/* Active effects - COMPLETELY SEPARATE for each mode */
+.toggle-switch.light:active .switch-thumb {
   transform: scale(0.9) translateX(32px);
+}
+
+.toggle-switch.light:active .switch-track {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(128, 128, 128, 0.02);
 }
 
 .toggle-switch.dark:active .switch-thumb {
   transform: scale(0.9) translateX(0);
+}
+
+.toggle-switch.dark:active .switch-track {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.015);
+}
+
+/* Icon colors for each mode */
+.toggle-switch.light .moon-icon img {
+  filter: brightness(0) invert(1); /* Make moon white */
+}
+
+.toggle-switch.dark .sun-icon img {
+  filter: brightness(0); /* Make sun black */
 }
 
 /* Mobile Navigation */
@@ -492,6 +571,37 @@
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode hover effects */
+[data-theme="dark"] .blog-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .hero-title::before,
+[data-theme="dark"] .hero-title::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
+
+[data-theme="dark"] .pagination button {
+  background-color: var(--color-background-medium);
+  color: var(--color-primary-text);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .pagination button:hover {
+  background-color: var(--color-background-dark);
+}
+
+[data-theme="dark"] .pagination .active {
+  background-color: var(--color-primary-text);
+  color: var(--color-background-white);
 }
 
 .main-card {

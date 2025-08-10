@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="app" data-theme={darkMode ? "dark" : "light"}>
       <header
         className={`header page-grid ${
           navbarVisible ? "navbar-visible" : "navbar-hidden"
@@ -97,7 +97,7 @@ function App() {
             </ul>
             <div className="theme-toggle">
               <button
-                className={`toggle-switch ${darkMode ? "dark" : "light"}`}
+                className={`toggle-switch ${darkMode ? "light" : "dark"}`}
                 onClick={() => setDarkMode(!darkMode)}
                 aria-label="Toggle dark mode"
               >
@@ -129,7 +129,7 @@ function App() {
             <div className="mobile-nav-controls">
               <div className="theme-toggle mobile-theme-toggle">
                 <button
-                  className={`toggle-switch ${darkMode ? "dark" : "light"}`}
+                  className={`toggle-switch ${darkMode ? "light" : "dark"}`}
                   onClick={() => setDarkMode(!darkMode)}
                   aria-label="Toggle dark mode"
                 >
