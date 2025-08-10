@@ -337,11 +337,16 @@ function App() {
             <div className="featured-content">
               <div className="blog-card featured-card">
                 <div className="card-image">
-                  <img src={image4} alt="Featured blog post" />
+                  <img
+                    src={image4}
+                    alt="Grid system for better Design User Interface"
+                  />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
-                    <h3 className="card-title">Building your API Stack</h3>
+                    <h3 className="card-title">
+                      Grid system for better Design User Interface
+                    </h3>
                     <img
                       src={arrowIcon}
                       alt="Read more"
@@ -349,20 +354,18 @@ function App() {
                     />
                   </div>
                   <div className="card-meta">
-                    <span className="author">Lana Steiner</span>
+                    <span className="author">Olivia Rhye</span>
                     <span className="date">18 Jan 2024</span>
                   </div>
                   <p className="card-description">
-                    The rise of RESTful APIs has been met by a rise in tools for
-                    creating, testing, and managing them. Here's how to build a
-                    robust API stack that scales with your business needs.
+                    A grid system is a design tool used to arrange content on a
+                    webpage using vertical and horizontal lines. It helps create
+                    consistent layouts and makes websites more visually
+                    appealing and easier to navigate.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge development">
-                      Development
-                    </span>
-                    <span className="category-badge">API</span>
-                    <span className="category-badge">Backend</span>
+                    <span className="category-badge design">DESIGN</span>
+                    <span className="category-badge interface">INTERFACE</span>
                   </div>
                 </div>
               </div>
@@ -378,95 +381,7 @@ function App() {
               {/* Row 1 */}
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image5} alt="UX review presentations" />
-                </div>
-                <div className="card-content">
-                  <div className="card-header">
-                    <h3 className="card-title">UX review presentations</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
-                  </div>
-                  <div className="card-meta">
-                    <span className="author">Olivia Rhye</span>
-                    <span className="date">20 Jan 2024</span>
-                  </div>
-                  <p className="card-description">
-                    How do you create compelling presentations that wow your
-                    colleagues and impress your managers?
-                  </p>
-                  <div className="card-categories">
-                    <span className="category-badge design">Design</span>
-                    <span className="category-badge research">Research</span>
-                    <span className="category-badge presentation">
-                      Presentation
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="blog-card post-card">
-                <div className="card-image">
-                  <img src={image6} alt="Migrating to Linear 101" />
-                </div>
-                <div className="card-content">
-                  <div className="card-header">
-                    <h3 className="card-title">Migrating to Linear 101</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
-                  </div>
-                  <div className="card-meta">
-                    <span className="author">Phoenix Baker</span>
-                    <span className="date">19 Jan 2024</span>
-                  </div>
-                  <p className="card-description">
-                    Linear helps streamline software projects, sprints, tasks,
-                    and bug tracking. Here's how to get started.
-                  </p>
-                  <div className="card-categories">
-                    <span className="category-badge design">Design</span>
-                    <span className="category-badge research">Research</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="blog-card post-card">
-                <div className="card-image">
-                  <img src={image7} alt="Building your API Stack" />
-                </div>
-                <div className="card-content">
-                  <div className="card-header">
-                    <h3 className="card-title">Building your API Stack</h3>
-                    <img
-                      src={arrowIcon}
-                      alt="Read more"
-                      className="arrow-icon"
-                    />
-                  </div>
-                  <div className="card-meta">
-                    <span className="author">Lana Steiner</span>
-                    <span className="date">18 Jan 2024</span>
-                  </div>
-                  <p className="card-description">
-                    The rise of RESTful APIs has been met by a rise in tools for
-                    creating, testing, and managing them.
-                  </p>
-                  <div className="card-categories">
-                    <span className="category-badge design">Design</span>
-                    <span className="category-badge research">Research</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Row 2 */}
-              <div className="blog-card post-card">
-                <div className="card-image">
-                  <img src={image8} alt="Bill Walsh leadership lessons" />
+                  <img src={image5} alt="Bill Walsh leadership lessons" />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
@@ -481,22 +396,26 @@ function App() {
                   </div>
                   <div className="card-meta">
                     <span className="author">Alec Whitten</span>
-                    <span className="date">17 Jan 2024</span>
+                    <span className="date">20 Jan 2024</span>
                   </div>
                   <p className="card-description">
                     Like to know the secrets of transforming a 2-14 team into a
                     3x Super Bowl winning Dynasty?
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Leadership</span>
-                    <span className="category-badge">Management</span>
+                    <span className="category-badge leadership">
+                      LEADERSHIP
+                    </span>
+                    <span className="category-badge management">
+                      MANAGEMENT
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image9} alt="PM mental models" />
+                  <img src={image6} alt="PM mental models" />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
@@ -508,18 +427,18 @@ function App() {
                     />
                   </div>
                   <div className="card-meta">
-                    <span className="author">Demi WIlkinson</span>
-                    <span className="date">16 Jan 2024</span>
+                    <span className="author">Demi Wilkinson</span>
+                    <span className="date">19 Jan 2024</span>
                   </div>
                   <p className="card-description">
                     Mental models are simple expressions of complex processes or
                     relationships.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge product">Product</span>
-                    <span className="category-badge research">Research</span>
+                    <span className="category-badge product">PRODUCT</span>
+                    <span className="category-badge research">RESEARCH</span>
                     <span className="category-badge frameworks">
-                      Frameworks
+                      FRAMEWORKS
                     </span>
                   </div>
                 </div>
@@ -527,7 +446,7 @@ function App() {
 
               <div className="blog-card post-card">
                 <div className="card-image">
-                  <img src={image10} alt="What is Wireframing?" />
+                  <img src={image7} alt="What is Wireframing?" />
                 </div>
                 <div className="card-content">
                   <div className="card-header">
@@ -540,15 +459,120 @@ function App() {
                   </div>
                   <div className="card-meta">
                     <span className="author">Candice Wu</span>
-                    <span className="date">15 Jan 2024</span>
+                    <span className="date">18 Jan 2024</span>
                   </div>
                   <p className="card-description">
                     Introduction to Wireframing and its Principles. Learn from
                     the best in the industry.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge design">Design</span>
-                    <span className="category-badge research">Research</span>
+                    <span className="category-badge design">DESIGN</span>
+                    <span className="category-badge research">RESEARCH</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="blog-card post-card">
+                <div className="card-image">
+                  <img
+                    src={image8}
+                    alt="How collaboration makes us better designers"
+                  />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      How collaboration makes us better designers
+                    </h3>
+                    <img
+                      src={arrowIcon}
+                      alt="Read more"
+                      className="arrow-icon"
+                    />
+                  </div>
+                  <div className="card-meta">
+                    <span className="author">Natali Craig</span>
+                    <span className="date">17 Jan 2024</span>
+                  </div>
+                  <p className="card-description">
+                    Collaboration can make our teams stronger, and our
+                    individual designs better.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge design">DESIGN</span>
+                    <span className="category-badge research">RESEARCH</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="blog-card post-card">
+                <div className="card-image">
+                  <img
+                    src={image9}
+                    alt="Our top 10 Javascript frameworks to use"
+                  />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Our top 10 Javascript frameworks to use in 2025
+                    </h3>
+                    <img
+                      src={arrowIcon}
+                      alt="Read more"
+                      className="arrow-icon"
+                    />
+                  </div>
+                  <div className="card-meta">
+                    <span className="author">Drew Cano</span>
+                    <span className="date">16 Jan 2024</span>
+                  </div>
+                  <p className="card-description">
+                    JavaScript frameworks make development easy with extensive
+                    features and functionalities.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge development">
+                      DEVELOPMENT
+                    </span>
+                    <span className="category-badge tools">TOOLS</span>
+                    <span className="category-badge saas">SAAS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="blog-card post-card">
+                <div className="card-image">
+                  <img
+                    src={image10}
+                    alt="Podcast: Creating a better CX Community"
+                  />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Podcast: Creating a better CX Community
+                    </h3>
+                    <img
+                      src={arrowIcon}
+                      alt="Read more"
+                      className="arrow-icon"
+                    />
+                  </div>
+                  <div className="card-meta">
+                    <span className="author">Orlando Diggs</span>
+                    <span className="date">15 Jan 2024</span>
+                  </div>
+                  <p className="card-description">
+                    Starting a community doesn’t need to be complicated, but how
+                    do you get started?
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge podcast">PODCAST</span>
+                    <span className="category-badge customer-success">
+                      CUSTOMER SUCCESS
+                    </span>
                   </div>
                 </div>
               </div>

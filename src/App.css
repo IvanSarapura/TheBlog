@@ -10,10 +10,14 @@
   --color-research-category-bg: #eef4ff;
   --color-presentation-category-text: #c11574;
   --color-presentation-category-bg: #fdf2fa;
-  --color-product-category-text: #c4320a;
-  --color-product-category-bg: #fff6ed;
+  --color-product-category-text: #026aa2;
+  --color-product-category-bg: #f0f9ff;
   --color-frameworks-category-text: #027a48;
   --color-frameworks-category-bg: #ecfdf3;
+  --color-interface-category-text: #c01048;
+  --color-interface-category-bg: #fff1f3;
+  --color-management-category-text: #363f72;
+  --color-management-category-bg: #f8f9fc;
   --color-border-light: #f0f0f0;
   --color-border-medium: #e5e5e5;
   --color-border-dark: #d1d5db;
@@ -524,7 +528,7 @@
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 0.4rem;
 }
 
@@ -547,8 +551,8 @@
 }
 
 .arrow-icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -609,7 +613,9 @@
   letter-spacing: 0.025em;
 }
 
-.category-badge.design {
+.category-badge.design,
+.category-badge.leadership,
+.category-badge.podcast {
   background-color: var(--color-design-category-bg);
   color: var(--color-design-category-text);
 }
@@ -619,7 +625,8 @@
   color: var(--color-research-category-text);
 }
 
-.category-badge.presentation {
+.category-badge.presentation,
+.category-badge.tools {
   background-color: var(--color-presentation-category-bg);
   color: var(--color-presentation-category-text);
 }
@@ -634,6 +641,18 @@
 .category-badge.development {
   background-color: var(--color-frameworks-category-bg);
   color: var(--color-frameworks-category-text);
+}
+
+.category-badge.interface,
+.category-badge.saas {
+  background-color: var(--color-interface-category-bg);
+  color: var(--color-interface-category-text);
+}
+
+.category-badge.management,
+.category-badge.customer-success {
+  background-color: var(--color-management-category-bg);
+  color: var(--color-management-category-text);
 }
 
 /* Featured Section */
