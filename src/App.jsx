@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -18,13 +18,49 @@ import image10 from "./assets/Image-10.png";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Handle navbar visibility on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px
+        setNavbarVisible(false);
+      } else {
+        // Scrolling up or at top
+        setNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
     <div className="app">
-      <header className="header page-grid">
+      <header
+        className={`header page-grid ${
+          navbarVisible ? "navbar-visible" : "navbar-hidden"
+        }`}
+      >
         <nav className="navbar">
           <div className="logo">Your Name</div>
-          <div className="nav-right">
+
+          {/* Desktop Navigation */}
+          <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
                 <span
@@ -85,6 +121,107 @@ function App() {
                   <div className="switch-thumb"></div>
                 </div>
               </button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="mobile-nav">
+            <div className="mobile-nav-controls">
+              <div className="theme-toggle mobile-theme-toggle">
+                <button
+                  className={`toggle-switch ${darkMode ? "dark" : "light"}`}
+                  onClick={() => setDarkMode(!darkMode)}
+                  aria-label="Toggle dark mode"
+                >
+                  <div className="switch-track">
+                    <div className="switch-icons">
+                      <div className="icon-container sun-icon">
+                        <img
+                          src={sunIcon}
+                          alt="Light mode"
+                          className="switch-icon"
+                        />
+                      </div>
+                      <div className="icon-container moon-icon">
+                        <img
+                          src={moonIcon}
+                          alt="Dark mode"
+                          className="switch-icon"
+                        />
+                      </div>
+                    </div>
+                    <div className="switch-thumb"></div>
+                  </div>
+                </button>
+              </div>
+
+              <button
+                className="hamburger-menu"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
+                <span
+                  className={`hamburger-line ${mobileMenuOpen ? "active" : ""}`}
+                ></span>
+                <span
+                  className={`hamburger-line ${mobileMenuOpen ? "active" : ""}`}
+                ></span>
+                <span
+                  className={`hamburger-line ${mobileMenuOpen ? "active" : ""}`}
+                ></span>
+              </button>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div
+              className={`mobile-menu-overlay ${mobileMenuOpen ? "open" : ""}`}
+            >
+              <ul className="mobile-menu">
+                <li>
+                  <span
+                    className="mobile-nav-link"
+                    onClick={() => {
+                      window.location.hash = "#blog";
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    Blog
+                  </span>
+                </li>
+                <li>
+                  <span
+                    className="mobile-nav-link"
+                    onClick={() => {
+                      window.location.hash = "#projects";
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    Projects
+                  </span>
+                </li>
+                <li>
+                  <span
+                    className="mobile-nav-link"
+                    onClick={() => {
+                      window.location.hash = "#about";
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    About
+                  </span>
+                </li>
+                <li>
+                  <span
+                    className="mobile-nav-link"
+                    onClick={() => {
+                      window.location.hash = "#newsletter";
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    Newsletter
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>
