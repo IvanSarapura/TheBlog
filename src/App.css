@@ -800,7 +800,104 @@
   color: #000000;
 }
 
-/* Responsive Design */
+/* Tablet Design */
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* Navbar tablet adjustments */
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  /* Hero title tablet */
+  .hero-title {
+    font-size: clamp(6rem, 12vw, 9rem);
+  }
+
+  /* Sections padding for tablet */
+  .blog-section,
+  .featured-section,
+  .all-posts-section {
+    padding: 1.25rem 0;
+  }
+
+  /* Blog grid - 2 columns for tablet */
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .main-card {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .secondary-cards {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .secondary-card {
+    flex-direction: column;
+  }
+
+  .secondary-card .card-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+  }
+
+  .secondary-card .card-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 1.25rem;
+  }
+
+  /* Featured card tablet - change to vertical layout like main-card */
+  .featured-card {
+    flex-direction: column;
+  }
+
+  .featured-card .card-image {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .featured-card .card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .featured-card .card-content {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  /* Posts grid - 2x3 for tablet */
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Footer tablet - reduce gaps */
+  .footer-main {
+    gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 2rem;
+  }
+}
+
+/* Mobile Design */
 @media (max-width: 767px) {
   /* Ajustar el grid para móviles */
   .page-grid {
