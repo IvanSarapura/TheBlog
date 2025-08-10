@@ -260,9 +260,11 @@ function App() {
                     colleagues and impress your managers?
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Design</span>
-                    <span className="category-badge">Research</span>
-                    <span className="category-badge">Presentation</span>
+                    <span className="category-badge design">Design</span>
+                    <span className="category-badge research">Research</span>
+                    <span className="category-badge presentation">
+                      Presentation
+                    </span>
                   </div>
                 </div>
               </div>
@@ -291,8 +293,8 @@ function App() {
                       and bug tracking. Here's how to get started.
                     </p>
                     <div className="card-categories">
-                      <span className="category-badge">Design</span>
-                      <span className="category-badge">Research</span>
+                      <span className="category-badge design">Design</span>
+                      <span className="category-badge research">Research</span>
                     </div>
                   </div>
                 </div>
@@ -319,8 +321,8 @@ function App() {
                       for creating, testing, and managing them.
                     </p>
                     <div className="card-categories">
-                      <span className="category-badge">Design</span>
-                      <span className="category-badge">Research</span>
+                      <span className="category-badge design">Design</span>
+                      <span className="category-badge research">Research</span>
                     </div>
                   </div>
                 </div>
@@ -356,7 +358,9 @@ function App() {
                     robust API stack that scales with your business needs.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Development</span>
+                    <span className="category-badge development">
+                      Development
+                    </span>
                     <span className="category-badge">API</span>
                     <span className="category-badge">Backend</span>
                   </div>
@@ -394,9 +398,11 @@ function App() {
                     colleagues and impress your managers?
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Design</span>
-                    <span className="category-badge">Research</span>
-                    <span className="category-badge">Presentation</span>
+                    <span className="category-badge design">Design</span>
+                    <span className="category-badge research">Research</span>
+                    <span className="category-badge presentation">
+                      Presentation
+                    </span>
                   </div>
                 </div>
               </div>
@@ -423,8 +429,8 @@ function App() {
                     and bug tracking. Here's how to get started.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Design</span>
-                    <span className="category-badge">Research</span>
+                    <span className="category-badge design">Design</span>
+                    <span className="category-badge research">Research</span>
                   </div>
                 </div>
               </div>
@@ -451,8 +457,8 @@ function App() {
                     creating, testing, and managing them.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Design</span>
-                    <span className="category-badge">Research</span>
+                    <span className="category-badge design">Design</span>
+                    <span className="category-badge research">Research</span>
                   </div>
                 </div>
               </div>
@@ -510,9 +516,11 @@ function App() {
                     relationships.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Product</span>
-                    <span className="category-badge">Research</span>
-                    <span className="category-badge">Frameworks</span>
+                    <span className="category-badge product">Product</span>
+                    <span className="category-badge research">Research</span>
+                    <span className="category-badge frameworks">
+                      Frameworks
+                    </span>
                   </div>
                 </div>
               </div>
@@ -539,8 +547,8 @@ function App() {
                     the best in the industry.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge">Design</span>
-                    <span className="category-badge">Research</span>
+                    <span className="category-badge design">Design</span>
+                    <span className="category-badge research">Research</span>
                   </div>
                 </div>
               </div>
