@@ -442,6 +442,102 @@ function App() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="footer page-grid">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-main">
+              <div className="footer-brand">
+                <h3 className="footer-logo">Your Name</h3>
+                <p className="footer-description">
+                  A personal blog sharing insights on design, development, and
+                  creative thinking.
+                </p>
+              </div>
+
+              <div className="footer-links">
+                <div className="footer-column">
+                  <h4 className="footer-heading">Blog</h4>
+                  <ul className="footer-nav">
+                    <li>
+                      <a href="#recent" className="footer-link">
+                        Recent Posts
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#featured" className="footer-link">
+                        Featured
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#archive" className="footer-link">
+                        Archive
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h4 className="footer-heading">About</h4>
+                  <ul className="footer-nav">
+                    <li>
+                      <a href="#about" className="footer-link">
+                        About Me
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#projects" className="footer-link">
+                        Projects
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" className="footer-link">
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h4 className="footer-heading">Connect</h4>
+                  <ul className="footer-nav">
+                    <li>
+                      <a href="#newsletter" className="footer-link">
+                        Newsletter
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#twitter" className="footer-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#linkedin" className="footer-link">
+                        LinkedIn
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="footer-bottom">
+              <p className="footer-copyright">
+                © 2025 Your Name - All rights reserved
+              </p>
+              <div className="footer-bottom-links">
+                <a href="#privacy" className="footer-bottom-link">
+                  Privacy Policy
+                </a>
+                <a href="#terms" className="footer-bottom-link">
+                  Terms of Service
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
