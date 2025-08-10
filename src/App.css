@@ -33,11 +33,11 @@
 /* Dark Mode Variables */
 [data-theme="dark"] {
   /* Primary Backgrounds */
-  --color-background-white: #0f0f0f;
-  --color-background-light: #1a1a1a;
-  --color-background-gray: #1a1a1a;
-  --color-background-medium: #262626;
-  --color-background-dark: #333333;
+  --color-background-white: #04060e;
+  --color-background-light: #080a1a;
+  --color-background-gray: #080a1a;
+  --color-background-medium: #0c0e24;
+  --color-background-dark: #10142e;
 
   /* Text Colors */
   --color-primary-text: #ffffff;
@@ -46,10 +46,10 @@
   --color-card-text: #b3b3b3;
 
   /* Borders */
-  --color-border-light: #333333;
-  --color-border-medium: #404040;
-  --color-border-dark: #555555;
-  --color-border-gray: #666666;
+  --color-border-light: #0c0e24;
+  --color-border-medium: #10142e;
+  --color-border-dark: #14182a;
+  --color-border-gray: #1a1e32;
 
   /* Category Badge Backgrounds (darker versions) */
   --color-design-category-bg: rgba(105, 65, 198, 0.2);
@@ -301,9 +301,9 @@
   transform: translateX(32px);
 }
 
-/* Dark mode - black thumb on white background (covering moon, sun visible) */
+/* Dark mode - dark blue thumb on white background (covering moon, sun visible) */
 .toggle-switch.dark .switch-thumb {
-  background-color: #1a1a1a;
+  background-color: #04060e;
   transform: translateX(0);
 }
 
