@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
+import menuIcon from "./assets/menu.svg";
 import arrowIcon from "./assets/Arrow-up-right.svg";
 import arrowLeftIcon from "./assets/arrow-left.svg";
 import arrowRightIcon from "./assets/arrow-right.svg";
@@ -182,7 +183,7 @@ function App() {
                 onClick={toggleMobileMenu}
                 aria-label="Close mobile menu"
               >
-                ×
+                <img src={menuIcon} alt="Close menu" className="close-icon" />
               </button>
 
               <ul className="mobile-menu">
