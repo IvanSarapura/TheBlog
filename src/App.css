@@ -1185,7 +1185,6 @@ body {
 }
 
 .about-btn.primary:hover {
-  background-color: var(--color-background-dark);
   transform: translateY(-1px);
 }
 
@@ -1351,7 +1350,6 @@ body {
 }
 
 .newsletter-subscribe-btn:hover {
-  background-color: var(--color-background-dark);
   transform: translateY(-1px);
 }
 
