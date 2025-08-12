@@ -3,6 +3,12 @@ import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
 import menuIcon from "./assets/menu.svg";
+import image11 from "./assets/Image-11.png";
+import image12 from "./assets/Image-12.png";
+import image13 from "./assets/Image-13.png";
+import image14 from "./assets/Image-14.png";
+import image15 from "./assets/Image-15.png";
+import arrowIcon from "./assets/Arrow-up-right.svg";
 
 function Projects({ darkMode, setDarkMode, setCurrentPage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -227,6 +233,177 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
         <div className="hero-container page-grid">
           <h1 className="hero-title">PROJECTS</h1>
         </div>
+
+        {/* Projects Section */}
+        <section className="projects-section page-grid">
+          <div className="container">
+            <h2 className="section-heading">List Projects</h2>
+
+            {/* First Row - 2 Cards */}
+            <div className="projects-grid">
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image11} alt="Project 1" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Project Name 1
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">UI/UX Design</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A user interface and experience design project focused on
+                    creating intuitive and engaging digital experiences.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ui">UI/UX</span>
+                    <span className="category-badge design">DESIGN</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image12} alt="Project 2" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Project Name 2
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">E-commerce Platform</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A complete e-commerce solution with advanced features,
+                    secure payment processing, and optimized user experience.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ecommerce">E-COMMERCE</span>
+                    <span className="category-badge platform">PLATFORM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Row - 1 Large Card */}
+            <div className="projects-grid">
+              <div className="project-card main-card">
+                <div className="card-image">
+                  <img src={image13} alt="Featured Project" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Featured Project
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">Full Stack Development</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A comprehensive full-stack web application that demonstrates
+                    advanced development techniques, modern architecture, and
+                    scalable design patterns. This project showcases the
+                    complete development lifecycle from concept to deployment.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge fullstack">FULL STACK</span>
+                    <span className="category-badge development">
+                      DEVELOPMENT
+                    </span>
+                    <span className="category-badge web">WEB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Third Row - 2 Cards */}
+            <div className="projects-grid">
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image14} alt="Project 4" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Project Name 4
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">UI/UX Design</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A user interface and experience design project focused on
+                    creating intuitive and engaging digital experiences.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ui">UI/UX</span>
+                    <span className="category-badge design">DESIGN</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image15} alt="Project 5" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Project Name 5
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">E-commerce Platform</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A complete e-commerce solution with advanced features,
+                    secure payment processing, and optimized user experience.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ecommerce">E-COMMERCE</span>
+                    <span className="category-badge platform">PLATFORM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
