@@ -16,12 +16,14 @@ import image7 from "./assets/Image-7.png";
 import image8 from "./assets/Image-8.png";
 import image9 from "./assets/Image-9.png";
 import image10 from "./assets/Image-10.png";
+import About from "./About";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [currentPage, setCurrentPage] = useState("blog");
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -50,6 +52,11 @@ function App() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Render About page if currentPage is "about"
+  if (currentPage === "about") {
+    return <About darkMode={darkMode} setDarkMode={setDarkMode} />;
+  }
+
   return (
     <div className="app" data-theme={darkMode ? "dark" : "light"}>
       <header
@@ -65,32 +72,40 @@ function App() {
             <ul className="nav-menu">
               <li>
                 <span
-                  className="nav-link"
-                  onClick={() => (window.location.hash = "#blog")}
+                  className={`nav-link ${
+                    currentPage === "blog" ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage("blog")}
                 >
                   Blog
                 </span>
               </li>
               <li>
                 <span
-                  className="nav-link"
-                  onClick={() => (window.location.hash = "#projects")}
+                  className={`nav-link ${
+                    currentPage === "projects" ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage("projects")}
                 >
                   Projects
                 </span>
               </li>
               <li>
                 <span
-                  className="nav-link"
-                  onClick={() => (window.location.hash = "#about")}
+                  className={`nav-link ${
+                    currentPage === "about" ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage("about")}
                 >
                   About
                 </span>
               </li>
               <li>
                 <span
-                  className="nav-link"
-                  onClick={() => (window.location.hash = "#newsletter")}
+                  className={`nav-link ${
+                    currentPage === "newsletter" ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage("newsletter")}
                 >
                   Newsletter
                 </span>
@@ -189,9 +204,11 @@ function App() {
               <ul className="mobile-menu">
                 <li>
                   <span
-                    className="mobile-nav-link"
+                    className={`mobile-nav-link ${
+                      currentPage === "blog" ? "active" : ""
+                    }`}
                     onClick={() => {
-                      window.location.hash = "#blog";
+                      setCurrentPage("blog");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -200,9 +217,11 @@ function App() {
                 </li>
                 <li>
                   <span
-                    className="mobile-nav-link"
+                    className={`mobile-nav-link ${
+                      currentPage === "projects" ? "active" : ""
+                    }`}
                     onClick={() => {
-                      window.location.hash = "#projects";
+                      setCurrentPage("projects");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -211,9 +230,11 @@ function App() {
                 </li>
                 <li>
                   <span
-                    className="mobile-nav-link"
+                    className={`mobile-nav-link ${
+                      currentPage === "about" ? "active" : ""
+                    }`}
                     onClick={() => {
-                      window.location.hash = "#about";
+                      setCurrentPage("about");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -222,9 +243,11 @@ function App() {
                 </li>
                 <li>
                   <span
-                    className="mobile-nav-link"
+                    className={`mobile-nav-link ${
+                      currentPage === "newsletter" ? "active" : ""
+                    }`}
                     onClick={() => {
-                      window.location.hash = "#newsletter";
+                      setCurrentPage("newsletter");
                       setMobileMenuOpen(false);
                     }}
                   >
