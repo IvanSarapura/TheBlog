@@ -1202,7 +1202,7 @@ body {
 
 /* Newsletter Section */
 .newsletter-section {
-  padding: 3rem 0;
+  padding: 1.5rem 0; /* match related-posts-section and footer */
   background-color: var(--color-background-white);
 }
 
@@ -1331,7 +1331,7 @@ body {
 .newsletter-hint-text {
   font-size: 0.875rem;
   color: var(--color-secondary-text);
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0 4px; /* added 4px left margin to move text right */
   text-align: left;
 }
 
@@ -1358,8 +1358,8 @@ body {
 .footer {
   background-color: var(--color-background-white);
   border-top: 1px solid var(--color-border-light);
-  padding: 3rem 0 1.5rem 0;
-  margin-top: 2rem;
+  padding: 1.5rem 0; /* match related-posts-section padding */
+  margin-top: 0; /* remove margin to match related-posts-section */
 }
 
 .footer-content {
@@ -1437,7 +1437,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem; /* reduced from 2rem to match compact section size */
   border-top: 1px solid var(--color-border-light);
 }
 
@@ -2296,4 +2296,18 @@ body {
     max-width: 100%;
     width: 100%;
   }
+}
+
+.related-posts-section {
+  padding: 1.5rem 0;
+  background-color: var(--color-background-white);
+}
+
+.related-posts-section .section-heading {
+  font-size: 1.75rem; /* slightly smaller than default 2.25rem */
+}
+
+.related-posts-section .posts-grid {
+  grid-template-rows: 1fr; /* only 1 row instead of 2 */
+  margin-bottom: 1rem; /* reduced margin since we only have 1 row */
 }
