@@ -1385,10 +1385,31 @@ body {
   .secondary-card .card-content {
     width: 100%;
     padding: 1.25rem;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .secondary-card .arrow-icon {
     display: block;
+  }
+
+  /* Ensure secondary cards look exactly like other cards in mobile */
+  .secondary-card .card-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .secondary-card .card-meta {
+    margin-bottom: 0.75rem;
+  }
+
+  .secondary-card .card-description {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   /* Featured section responsive */
