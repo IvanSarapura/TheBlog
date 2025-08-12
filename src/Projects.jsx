@@ -239,71 +239,8 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
           <div className="container">
             <h2 className="section-heading">List Projects</h2>
 
-            {/* First Row - 2 Cards */}
-            <div className="projects-row">
-              <div className="project-card">
-                <div className="card-image">
-                  <img src={image11} alt="Project 1" />
-                </div>
-                <div className="card-content">
-                  <div className="card-header">
-                    <h3 className="card-title">
-                      Project Name 1
-                      <img
-                        src={arrowIcon}
-                        alt="View project"
-                        className="arrow-icon"
-                      />
-                    </h3>
-                  </div>
-                  <div className="card-meta">
-                    <span className="category">UI/UX Design</span>
-                    <span className="date">2024</span>
-                  </div>
-                  <p className="card-description">
-                    A user interface and experience design project focused on
-                    creating intuitive and engaging digital experiences.
-                  </p>
-                  <div className="card-categories">
-                    <span className="category-badge ui">UI/UX</span>
-                    <span className="category-badge design">DESIGN</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="project-card">
-                <div className="card-image">
-                  <img src={image12} alt="Project 2" />
-                </div>
-                <div className="card-content">
-                  <div className="card-header">
-                    <h3 className="card-title">
-                      Project Name 2
-                      <img
-                        src={arrowIcon}
-                        alt="View project"
-                        className="arrow-icon"
-                      />
-                    </h3>
-                  </div>
-                  <div className="card-meta">
-                    <span className="category">E-commerce Platform</span>
-                    <span className="date">2024</span>
-                  </div>
-                  <p className="card-description">
-                    A complete e-commerce solution with advanced features,
-                    secure payment processing, and optimized user experience.
-                  </p>
-                  <div className="card-categories">
-                    <span className="category-badge ecommerce">E-COMMERCE</span>
-                    <span className="category-badge platform">PLATFORM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Second Row - 1 Large Card */}
-            <div className="projects-row">
+            {/* First Row - Featured Project + 2 Small Cards */}
+            <div className="projects-row featured-layout">
               <div className="project-card featured">
                 <div className="card-image">
                   <img src={image13} alt="Featured Project" />
@@ -311,7 +248,9 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Featured Project
+                      UX review presentatiBringing Design Process to Teams, How
+                      to Solve User Problems with Data & Inclusive Collaboration
+                      Designons
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -329,6 +268,17 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     scalable design patterns. This project showcases the
                     complete development lifecycle from concept to deployment.
                   </p>
+                  <p className="card-description">
+                    Built with cutting-edge frameworks and tools, this project
+                    represents the pinnacle of modern web development practices.
+                    It includes comprehensive testing, documentation, and
+                    deployment strategies for production environments.
+                  </p>
+                  <p className="card-description">
+                    The project features a robust backend API with real-time
+                    data processing capabilities and a modern frontend built
+                    with responsive design principles.
+                  </p>
                   <div className="card-categories">
                     <span className="category-badge fullstack">FULL STACK</span>
                     <span className="category-badge development">
@@ -338,9 +288,73 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   </div>
                 </div>
               </div>
+
+              <div className="small-cards-column">
+                <div className="project-card small">
+                  <div className="card-image">
+                    <img src={image11} alt="Project 1" />
+                  </div>
+                  <div className="card-content">
+                    <div className="card-header">
+                      <h3 className="card-title">
+                        Project Name 1
+                        <img
+                          src={arrowIcon}
+                          alt="View project"
+                          className="arrow-icon"
+                        />
+                      </h3>
+                    </div>
+                    <div className="card-meta">
+                      <span className="category">UI/UX Design</span>
+                      <span className="date">2024</span>
+                    </div>
+                    <p className="card-description">
+                      A user interface and experience design project focused on
+                      creating intuitive and engaging digital experiences.
+                    </p>
+                    <div className="card-categories">
+                      <span className="category-badge ui">UI/UX</span>
+                      <span className="category-badge design">DESIGN</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="project-card small">
+                  <div className="card-image">
+                    <img src={image12} alt="Project 2" />
+                  </div>
+                  <div className="card-content">
+                    <div className="card-header">
+                      <h3 className="card-title">
+                        Project Name 2
+                        <img
+                          src={arrowIcon}
+                          alt="View project"
+                          className="arrow-icon"
+                        />
+                      </h3>
+                    </div>
+                    <div className="card-meta">
+                      <span className="category">E-commerce Platform</span>
+                      <span className="date">2024</span>
+                    </div>
+                    <p className="card-description">
+                      A complete e-commerce solution with advanced features,
+                      secure payment processing, and optimized user experience.
+                    </p>
+                    <div className="card-categories">
+                      <span className="category-badge ecommerce">
+                        E-COMMERCE
+                      </span>
+                      <span className="category-badge platform">PLATFORM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Third Row - 2 Cards */}
+            {/* Second Row - 2 Cards */}
             <div className="projects-row">
               <div className="project-card">
                 <div className="card-image">
@@ -349,7 +363,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Project Name 4
+                      Project Name 3
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -379,7 +393,70 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
+                      Project Name 4
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">E-commerce Platform</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A complete e-commerce solution with advanced features,
+                    secure payment processing, and optimized user experience.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ecommerce">E-COMMERCE</span>
+                    <span className="category-badge platform">PLATFORM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Third Row - 2 Cards */}
+            <div className="projects-row">
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image14} alt="Project 6" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
                       Project Name 5
+                      <img
+                        src={arrowIcon}
+                        alt="View project"
+                        className="arrow-icon"
+                      />
+                    </h3>
+                  </div>
+                  <div className="card-meta">
+                    <span className="category">UI/UX Design</span>
+                    <span className="date">2024</span>
+                  </div>
+                  <p className="card-description">
+                    A user interface and experience design project focused on
+                    creating intuitive and engaging digital experiences.
+                  </p>
+                  <div className="card-categories">
+                    <span className="category-badge ui">UI/UX</span>
+                    <span className="category-badge design">DESIGN</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="card-image">
+                  <img src={image15} alt="Project 7" />
+                </div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="card-title">
+                      Project Name 6
                       <img
                         src={arrowIcon}
                         alt="View project"

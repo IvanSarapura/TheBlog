@@ -591,7 +591,7 @@ body {
 }
 
 .section-heading {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-primary-text);
   margin-bottom: 2rem;
@@ -2042,8 +2042,25 @@ body {
     margin-bottom: 2rem;
   }
 
+  .projects-row.featured-layout {
+    flex-direction: column;
+  }
+
+  .small-cards-column {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .project-card {
     width: 100%;
+  }
+
+  .project-card.featured {
+    flex: none;
+  }
+
+  .project-card.small {
+    flex: none;
   }
 
   .project-card .card-content {
@@ -2343,8 +2360,24 @@ body {
 
 .project-card.featured {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
+  flex: 2;
+}
+
+.small-cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.project-card.small {
+  flex: 1;
+}
+
+.projects-row.featured-layout {
+  align-items: stretch;
 }
 
 .project-card {
@@ -2397,6 +2430,10 @@ body {
   padding: 2rem;
 }
 
+.project-card.small .card-content {
+  padding: 1.25rem;
+}
+
 .project-card .card-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -2413,6 +2450,11 @@ body {
 .project-card.featured .card-title {
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+.project-card.small .card-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
 }
 
 .project-card .card-meta {
@@ -2434,6 +2476,12 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   margin-bottom: 2rem;
+}
+
+.project-card.small .card-description {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
 .project-card .card-categories {
