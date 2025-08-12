@@ -13,18 +13,27 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
 
   // Handle navbar visibility on scroll
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px
-        setNavbarVisible(false);
-      } else {
-        // Scrolling up or at top
-        setNavbarVisible(true);
+          // Show navbar when scrolling up or at the top
+          if (currentScrollY < lastScrollY || currentScrollY < 100) {
+            setNavbarVisible(true);
+          }
+          // Hide navbar when scrolling down and past 100px
+          else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            setNavbarVisible(false);
+          }
+
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

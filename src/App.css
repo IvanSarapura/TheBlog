@@ -152,10 +152,13 @@ body {
 .header {
   width: 100%;
   background-color: var(--color-background-white);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  transition: transform 0.3s ease-in-out;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
 }
 
 .header.navbar-visible {
@@ -538,6 +541,7 @@ body {
 .main-content {
   flex: 1;
   background-color: var(--color-background-white);
+  padding-top: 80px; /* Compensate for fixed navbar */
 }
 
 .hero-container {
