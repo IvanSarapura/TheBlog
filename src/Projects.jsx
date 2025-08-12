@@ -248,8 +248,8 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      How to Solve User Problems with Data & Inclusive
-                      Collaboration Design
+                      How to participate in volunteering activities in the New
+                      Zealand Islands
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -258,7 +258,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     </h3>
                   </div>
                   <div className="card-meta">
-                    <span className="category">Full Stack Development</span>
+                    <span className="category">Volunteering</span>
                     <span className="date">2024</span>
                   </div>
                   <p className="card-description">
@@ -343,7 +343,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                       </h3>
                     </div>
                     <div className="card-meta">
-                      <span className="category">E-commerce Platform</span>
+                      <span className="category">Social Activism</span>
                       <span className="date">2024</span>
                     </div>
                     <p className="card-description">
@@ -371,6 +371,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   <div className="card-header">
                     <h3 className="card-title">
                       Icon Package of Sling Icon Package for Social Media
+                      Management
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -436,7 +437,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Project Name 5
+                      Interactive news paper on the impact of cryptocurrencies
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -445,16 +446,18 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     </h3>
                   </div>
                   <div className="card-meta">
-                    <span className="category">UI/UX Design</span>
+                    <span className="category">Development</span>
                     <span className="date">2024</span>
                   </div>
                   <p className="card-description">
-                    A user interface and experience design project focused on
-                    creating intuitive and engaging digital experiences.
+                    An interactive news paper on the impact of cryptocurrencies
+                    on the legal system.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge ui">UI/UX</span>
-                    <span className="category-badge design">DESIGN</span>
+                    <span className="category-badge development">
+                      DEVELOPMENT
+                    </span>
+                    <span className="category-badge product">PRODUCT</span>
                   </div>
                 </div>
               </div>
@@ -466,7 +469,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Project Name 6
+                      University course on cryptocurrencies and legaltech
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -475,16 +478,16 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     </h3>
                   </div>
                   <div className="card-meta">
-                    <span className="category">E-commerce Platform</span>
+                    <span className="category">University Course</span>
                     <span className="date">2024</span>
                   </div>
                   <p className="card-description">
-                    A complete e-commerce solution with advanced features,
-                    secure payment processing, and optimized user experience.
+                    A university course on cryptocurrencies and legaltech, with
+                    an interesting interaction with a Smart Contract.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge ecommerce">E-COMMERCE</span>
-                    <span className="category-badge platform">PLATFORM</span>
+                    <span className="category-badge podcast">PODCAST</span>
+                    <span className="category-badge research">RESEARCH</span>
                   </div>
                 </div>
               </div>
@@ -508,63 +511,132 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
               <div className="footer-links">
                 <div className="footer-column">
-                  <h4 className="footer-heading">Blog</h4>
+                  <h4 className="footer-heading">Navigation</h4>
                   <ul className="footer-nav">
                     <li>
-                      <a href="#recent" className="footer-link">
-                        Recent Posts
-                      </a>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("blog")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        Blog
+                      </span>
                     </li>
                     <li>
-                      <a href="#featured" className="footer-link">
-                        Featured
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#archive" className="footer-link">
-                        Archive
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="footer-column">
-                  <h4 className="footer-heading">About</h4>
-                  <ul className="footer-nav">
-                    <li>
-                      <a href="#about" className="footer-link">
-                        About Me
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#projects" className="footer-link">
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("projects")}
+                        style={{ cursor: "pointer" }}
+                      >
                         Projects
-                      </a>
+                      </span>
                     </li>
                     <li>
-                      <a href="#contact" className="footer-link">
-                        Contact
-                      </a>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("about")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        About
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("newsletter")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        Newsletter
+                      </span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="footer-column">
-                  <h4 className="footer-heading">Connect</h4>
+                  <h4 className="footer-heading">Resources</h4>
                   <ul className="footer-nav">
                     <li>
-                      <a href="#newsletter" className="footer-link">
-                        Newsletter
+                      <a
+                        href="https://github.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        GitHub
                       </a>
                     </li>
                     <li>
-                      <a href="#twitter" className="footer-link">
+                      <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
                         Twitter
                       </a>
                     </li>
                     <li>
-                      <a href="#linkedin" className="footer-link">
-                        LinkedIn
+                      <a
+                        href="https://dribbble.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Dribbble
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h4 className="footer-heading">Contact</h4>
+                  <ul className="footer-nav">
+                    <li>
+                      <a
+                        href="mailto:hello@example.com"
+                        className="footer-link"
+                      >
+                        Email
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://calendly.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Schedule Call
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://behance.net"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Behance
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://medium.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Medium
                       </a>
                     </li>
                   </ul>
@@ -577,11 +649,14 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 © 2025 Your Name - All rights reserved
               </p>
               <div className="footer-bottom-links">
-                <a href="#privacy" className="footer-bottom-link">
+                <a href="/privacy" className="footer-bottom-link">
                   Privacy Policy
                 </a>
-                <a href="#terms" className="footer-bottom-link">
+                <a href="/terms" className="footer-bottom-link">
                   Terms of Service
+                </a>
+                <a href="/sitemap" className="footer-bottom-link">
+                  Sitemap
                 </a>
               </div>
             </div>

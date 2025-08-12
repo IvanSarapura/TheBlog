@@ -709,63 +709,132 @@ function App() {
 
               <div className="footer-links">
                 <div className="footer-column">
-                  <h4 className="footer-heading">Blog</h4>
+                  <h4 className="footer-heading">Navigation</h4>
                   <ul className="footer-nav">
                     <li>
-                      <a href="#recent" className="footer-link">
-                        Recent Posts
-                      </a>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("blog")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        Blog
+                      </span>
                     </li>
                     <li>
-                      <a href="#featured" className="footer-link">
-                        Featured
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#archive" className="footer-link">
-                        Archive
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="footer-column">
-                  <h4 className="footer-heading">About</h4>
-                  <ul className="footer-nav">
-                    <li>
-                      <a href="#about" className="footer-link">
-                        About Me
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#projects" className="footer-link">
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("projects")}
+                        style={{ cursor: "pointer" }}
+                      >
                         Projects
-                      </a>
+                      </span>
                     </li>
                     <li>
-                      <a href="#contact" className="footer-link">
-                        Contact
-                      </a>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("about")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        About
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        className="footer-link"
+                        onClick={() => setCurrentPage("newsletter")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        Newsletter
+                      </span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="footer-column">
-                  <h4 className="footer-heading">Connect</h4>
+                  <h4 className="footer-heading">Resources</h4>
                   <ul className="footer-nav">
                     <li>
-                      <a href="#newsletter" className="footer-link">
-                        Newsletter
+                      <a
+                        href="https://github.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        GitHub
                       </a>
                     </li>
                     <li>
-                      <a href="#twitter" className="footer-link">
+                      <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
                         Twitter
                       </a>
                     </li>
                     <li>
-                      <a href="#linkedin" className="footer-link">
-                        LinkedIn
+                      <a
+                        href="https://dribbble.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Dribbble
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h4 className="footer-heading">Contact</h4>
+                  <ul className="footer-nav">
+                    <li>
+                      <a
+                        href="mailto:hello@example.com"
+                        className="footer-link"
+                      >
+                        Email
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://calendly.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Schedule Call
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://behance.net"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Behance
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://medium.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                      >
+                        Medium
                       </a>
                     </li>
                   </ul>
@@ -778,11 +847,14 @@ function App() {
                 © 2025 Your Name - All rights reserved
               </p>
               <div className="footer-bottom-links">
-                <a href="#privacy" className="footer-bottom-link">
+                <a href="/privacy" className="footer-bottom-link">
                   Privacy Policy
                 </a>
-                <a href="#terms" className="footer-bottom-link">
+                <a href="/terms" className="footer-bottom-link">
                   Terms of Service
+                </a>
+                <a href="/sitemap" className="footer-bottom-link">
+                  Sitemap
                 </a>
               </div>
             </div>
