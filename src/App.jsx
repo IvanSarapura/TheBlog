@@ -55,12 +55,24 @@ function App() {
 
   // Render About page if currentPage is "about"
   if (currentPage === "about") {
-    return <About darkMode={darkMode} setDarkMode={setDarkMode} />;
+    return (
+      <About
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        setCurrentPage={setCurrentPage}
+      />
+    );
   }
 
   // Render Newsletter page if currentPage is "newsletter"
   if (currentPage === "newsletter") {
-    return <Newsletter darkMode={darkMode} setDarkMode={setDarkMode} />;
+    return (
+      <Newsletter
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        setCurrentPage={setCurrentPage}
+      />
+    );
   }
 
   return (

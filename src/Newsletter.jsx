@@ -10,7 +10,7 @@ import image5 from "./assets/Image-5.png";
 import image6 from "./assets/Image-6.png";
 import image7 from "./assets/Image-7.png";
 
-function Newsletter({ darkMode, setDarkMode }) {
+function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -58,7 +58,7 @@ function Newsletter({ darkMode, setDarkMode }) {
               <li>
                 <span
                   className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => (window.location.href = "/")}
+                  onClick={() => setCurrentPage("blog")}
                 >
                   Blog
                 </span>
@@ -66,7 +66,7 @@ function Newsletter({ darkMode, setDarkMode }) {
               <li>
                 <span
                   className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => (window.location.href = "/projects")}
+                  onClick={() => setCurrentPage("projects")}
                 >
                   Projects
                 </span>
@@ -74,7 +74,7 @@ function Newsletter({ darkMode, setDarkMode }) {
               <li>
                 <span
                   className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => (window.location.href = "/about")}
+                  onClick={() => setCurrentPage("about")}
                 >
                   About
                 </span>
@@ -82,7 +82,7 @@ function Newsletter({ darkMode, setDarkMode }) {
               <li>
                 <span
                   className={`nav-link ${true ? "active" : ""}`}
-                  onClick={() => (window.location.href = "/newsletter")}
+                  onClick={() => setCurrentPage("newsletter")}
                 >
                   Newsletter
                 </span>
@@ -183,7 +183,7 @@ function Newsletter({ darkMode, setDarkMode }) {
                   <span
                     className={`mobile-nav-link ${false ? "active" : ""}`}
                     onClick={() => {
-                      window.location.href = "/";
+                      setCurrentPage("blog");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -194,7 +194,7 @@ function Newsletter({ darkMode, setDarkMode }) {
                   <span
                     className={`mobile-nav-link ${false ? "active" : ""}`}
                     onClick={() => {
-                      window.location.href = "/projects";
+                      setCurrentPage("projects");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -205,7 +205,7 @@ function Newsletter({ darkMode, setDarkMode }) {
                   <span
                     className={`mobile-nav-link ${false ? "active" : ""}`}
                     onClick={() => {
-                      window.location.href = "/about";
+                      setCurrentPage("about");
                       setMobileMenuOpen(false);
                     }}
                   >
@@ -216,7 +216,7 @@ function Newsletter({ darkMode, setDarkMode }) {
                   <span
                     className={`mobile-nav-link ${true ? "active" : ""}`}
                     onClick={() => {
-                      window.location.href = "/newsletter";
+                      setCurrentPage("newsletter");
                       setMobileMenuOpen(false);
                     }}
                   >
