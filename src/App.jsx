@@ -18,6 +18,7 @@ import image9 from "./assets/Image-9.png";
 import image10 from "./assets/Image-10.png";
 import About from "./About";
 import Newsletter from "./Newsletter";
+import Projects from "./Projects";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -57,6 +58,17 @@ function App() {
   if (currentPage === "about") {
     return (
       <About
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        setCurrentPage={setCurrentPage}
+      />
+    );
+  }
+
+  // Render Projects page if currentPage is "projects"
+  if (currentPage === "projects") {
+    return (
+      <Projects
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         setCurrentPage={setCurrentPage}
