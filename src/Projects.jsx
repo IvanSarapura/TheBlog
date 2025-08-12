@@ -241,7 +241,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
             {/* First Row - Featured Project + 2 Small Cards */}
             <div className="projects-row featured-layout">
-              <div className="project-card featured fixed-size-card">
+              <div className="project-card featured">
                 <div className="card-image">
                   <img src={image13} alt="Featured Project" />
                 </div>
@@ -295,7 +295,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
               </div>
 
               <div className="small-cards-column">
-                <div className="project-card small fixed-size-small-card">
+                <div className="project-card small">
                   <div className="card-image">
                     <img src={image11} alt="Project 1" />
                   </div>
@@ -327,7 +327,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   </div>
                 </div>
 
-                <div className="project-card small fixed-size-small-card">
+                <div className="project-card small">
                   <div className="card-image">
                     <img src={image12} alt="Project 2" />
                   </div>
