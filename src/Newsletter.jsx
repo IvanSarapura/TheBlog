@@ -50,7 +50,7 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
         }`}
       >
         <nav className="navbar">
-          <div className="logo">Your Name</div>
+          <div className="logo">John Doe</div>
 
           {/* Desktop Navigation */}
           <div className="nav-right desktop-nav">
@@ -407,7 +407,7 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
           <div className="footer-content">
             <div className="footer-main">
               <div className="footer-brand">
-                <h3 className="footer-logo">Your Name</h3>
+                <h3 className="footer-logo">John Doe</h3>
                 <p className="footer-description">
                   A personal blog sharing insights on design, development, and
                   creative thinking.
@@ -551,7 +551,7 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
 
             <div className="footer-bottom">
               <p className="footer-copyright">
-                © 2025 Your Name - All rights reserved
+                © 2025 John Doe - All rights reserved
               </p>
               <div className="footer-bottom-links">
                 <a href="/privacy" className="footer-bottom-link">
