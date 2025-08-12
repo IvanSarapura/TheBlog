@@ -248,9 +248,8 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      UX review presentatiBringing Design Process to Teams, How
-                      to Solve User Problems with Data & Inclusive Collaboration
-                      Designons
+                      How to Solve User Problems with Data & Inclusive
+                      Collaboration Design
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -265,8 +264,11 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   <p className="card-description">
                     A comprehensive full-stack web application that demonstrates
                     advanced development techniques, modern architecture, and
-                    scalable design patterns. This project showcases the
-                    complete development lifecycle from concept to deployment.
+                    scalable design patterns. The project is a web application
+                    that allows users to manage their hotel reservations and
+                    bookings. The project is built with React.js for the
+                    frontend and Node.js for the backend. The project is
+                    deployed on Vercel.
                   </p>
                   <p className="card-description">
                     Built with cutting-edge frameworks and tools, this project
@@ -297,7 +299,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   <div className="card-content">
                     <div className="card-header">
                       <h3 className="card-title">
-                        Project Name 1
+                        User Experience Design Dashboard Hotel Management
                         <img
                           src={arrowIcon}
                           alt="View project"
@@ -310,8 +312,9 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                       <span className="date">2024</span>
                     </div>
                     <p className="card-description">
-                      A user interface and experience design project focused on
-                      creating intuitive and engaging digital experiences.
+                      User experience (UX) design is a discipline that focuses
+                      on creating products and services that are easy to use,
+                      efficient, and enjoyable for users.
                     </p>
                     <div className="card-categories">
                       <span className="category-badge ui">UI/UX</span>
@@ -327,7 +330,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   <div className="card-content">
                     <div className="card-header">
                       <h3 className="card-title">
-                        Project Name 2
+                        How to Impact Society with Natural Activism
                         <img
                           src={arrowIcon}
                           alt="View project"
@@ -340,8 +343,8 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                       <span className="date">2024</span>
                     </div>
                     <p className="card-description">
-                      A complete e-commerce solution with advanced features,
-                      secure payment processing, and optimized user experience.
+                      The natural activism is a movement that focuses on
+                      protecting and preserving the natural environment.
                     </p>
                     <div className="card-categories">
                       <span className="category-badge ecommerce">
@@ -363,7 +366,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Project Name 3
+                      Icon Package of Sling Icon Package for Social Media
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -376,8 +379,9 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     <span className="date">2024</span>
                   </div>
                   <p className="card-description">
-                    A user interface and experience design project focused on
-                    creating intuitive and engaging digital experiences.
+                    An icon package is a collection of icons that can be used in
+                    various design projects, such as website design, app
+                    development, and graphic design.
                   </p>
                   <div className="card-categories">
                     <span className="category-badge ui">UI/UX</span>
@@ -393,7 +397,8 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 <div className="card-content">
                   <div className="card-header">
                     <h3 className="card-title">
-                      Project Name 4
+                      UX review presentations for a mobile app in Figma and
+                      Framer
                       <img
                         src={arrowIcon}
                         alt="View project"
@@ -406,8 +411,9 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     <span className="date">2024</span>
                   </div>
                   <p className="card-description">
-                    A complete e-commerce solution with advanced features,
-                    secure payment processing, and optimized user experience.
+                    UX review presentations are a great way to get feedback on
+                    your design work. They are a great way to get feedback on
+                    your design work.
                   </p>
                   <div className="card-categories">
                     <span className="category-badge ecommerce">E-COMMERCE</span>
