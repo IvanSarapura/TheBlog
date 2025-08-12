@@ -19,6 +19,7 @@ import image10 from "./assets/Image-10.png";
 import About from "./About";
 import Newsletter from "./Newsletter";
 import Projects from "./Projects";
+import BlogPost from "./BlogPost";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,6 +27,7 @@ function App() {
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [currentPage, setCurrentPage] = useState("blog");
+  const [currentPostId, setCurrentPostId] = useState(null);
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -63,6 +65,18 @@ function App() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Function to navigate to a specific blog post
+  const navigateToPost = (postId) => {
+    setCurrentPostId(postId);
+    setCurrentPage("blog-post");
+  };
+
+  // Function to navigate back to blog
+  const navigateToBlog = () => {
+    setCurrentPostId(null);
+    setCurrentPage("blog");
+  };
+
   // Render About page if currentPage is "about"
   if (currentPage === "about") {
     return (
@@ -92,6 +106,18 @@ function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         setCurrentPage={setCurrentPage}
+      />
+    );
+  }
+
+  // Render BlogPost page if currentPage is "blog-post"
+  if (currentPage === "blog-post") {
+    return (
+      <BlogPost
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        setCurrentPage={setCurrentPage}
+        postId={currentPostId}
       />
     );
   }
@@ -413,7 +439,10 @@ function App() {
         <section className="featured-section page-grid">
           <div className="container">
             <div className="featured-content">
-              <div className="blog-card featured-card">
+              <div
+                className="blog-card featured-card clickable-card"
+                onClick={() => navigateToPost("1")}
+              >
                 <div className="card-image">
                   <img
                     src={image4}
