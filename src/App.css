@@ -819,7 +819,8 @@ body {
 
 .category-badge.design,
 .category-badge.leadership,
-.category-badge.podcast {
+.category-badge.podcast,
+.category-badge.collaboration {
   background-color: var(--color-design-category-bg);
   color: var(--color-design-category-text);
 }

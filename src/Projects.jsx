@@ -282,11 +282,14 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     with responsive design principles.
                   </p>
                   <div className="card-categories">
-                    <span className="category-badge fullstack">FULL STACK</span>
-                    <span className="category-badge development">
-                      DEVELOPMENT
+                    <span className="category-badge design">DESIGN</span>
+                    <span className="category-badge research">RESEARCH</span>
+                    <span className="category-badge presentation">
+                      PRESENTATION
                     </span>
-                    <span className="category-badge web">WEB</span>
+                    <span className="category-badge collaboration">
+                      COLLABORATION
+                    </span>
                   </div>
                 </div>
               </div>
@@ -319,6 +322,7 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                     <div className="card-categories">
                       <span className="category-badge ui">UI/UX</span>
                       <span className="category-badge design">DESIGN</span>
+                      <span className="category-badge research">RESEARCH</span>
                     </div>
                   </div>
                 </div>
