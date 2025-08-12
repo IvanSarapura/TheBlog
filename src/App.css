@@ -1255,14 +1255,13 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
+  margin: 0; /* parent spans full width */
 }
 
 .newsletter-input-container {
   width: 100%;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto; /* centered */
 }
 
 .newsletter-input-row {
@@ -1318,8 +1317,8 @@ body {
 }
 
 .newsletter-help-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   opacity: 0.5;
   cursor: pointer;
   transition: opacity 0.2s ease;
@@ -2278,5 +2277,23 @@ body {
     max-width: 400px;
     height: 48px;
     transform: none;
+  }
+}
+
+/* Newsletter input sizing overrides (placed after base rules) */
+.newsletter-input-container {
+  max-width: 460px; /* narrower than content for better focus */
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .newsletter-input-container {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsletter-input-container {
+    max-width: 100%;
+    width: 100%;
   }
 }
