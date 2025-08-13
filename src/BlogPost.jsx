@@ -381,32 +381,32 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
           </div>
         </section>
 
-        {/* Hero Section */}
-        <section className="blog-post-hero page-grid">
-          <div className="container">
-            <div className="blog-post-hero-content">
-              <div className="blog-post-meta">
-                <span className="blog-post-category">{blogPost.category}</span>
-                <span className="blog-post-date">{blogPost.date}</span>
-                <span className="blog-post-separator">•</span>
-                <span className="blog-post-read-time">{blogPost.readTime}</span>
-              </div>
-              <h1 className="blog-post-title">{blogPost.title}</h1>
-              <p className="blog-post-subtitle">{blogPost.subtitle}</p>
-              <div className="blog-post-author">
-                <div className="author-info">
-                  <span className="author-name">By {blogPost.author}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Content Section */}
         <section className="blog-post-content page-grid">
           <div className="container">
             <div className="blog-post-layout">
               <article className="blog-post-main">
+                {/* Hero Section */}
+                <div className="blog-post-hero-content">
+                  <div className="blog-post-meta">
+                    <span className="blog-post-category">
+                      {blogPost.category}
+                    </span>
+                    <span className="blog-post-date">{blogPost.date}</span>
+                    <span className="blog-post-separator">•</span>
+                    <span className="blog-post-read-time">
+                      {blogPost.readTime}
+                    </span>
+                  </div>
+                  <h1 className="blog-post-title">{blogPost.title}</h1>
+                  <p className="blog-post-subtitle">{blogPost.subtitle}</p>
+                  <div className="blog-post-author">
+                    <div className="author-info">
+                      <span className="author-name">By {blogPost.author}</span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Hero Image */}
                 <div className="blog-post-image-container">
                   <img
