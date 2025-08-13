@@ -4,6 +4,7 @@ import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
 import menuIcon from "./assets/menu.svg";
 import arrowIcon from "./assets/Arrow-up-right.svg";
+import arrowLeftIcon from "./assets/arrow-left.svg";
 
 function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -374,7 +375,8 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
               className="back-button"
               onClick={() => setCurrentPage("blog")}
             >
-              ← Back to Blog
+              <img src={arrowLeftIcon} alt="Back" className="back-icon" />
+              Back to Blog
             </button>
           </div>
         </section>
@@ -386,6 +388,7 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
               <div className="blog-post-meta">
                 <span className="blog-post-category">{blogPost.category}</span>
                 <span className="blog-post-date">{blogPost.date}</span>
+                <span className="blog-post-separator">•</span>
                 <span className="blog-post-read-time">{blogPost.readTime}</span>
               </div>
               <h1 className="blog-post-title">{blogPost.title}</h1>
