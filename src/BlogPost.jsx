@@ -5,6 +5,16 @@ import moonIcon from "./assets/moon-dark.svg";
 import menuIcon from "./assets/menu.svg";
 import arrowIcon from "./assets/Arrow-up-right.svg";
 import arrowLeftIcon from "./assets/arrow-left.svg";
+import heroImage from "./assets/Image-4-01.png";
+import contentImage1 from "./assets/Image-4-02.png";
+import contentImage2 from "./assets/Image-4-03.png";
+import contentImage3 from "./assets/Image-4-04.png";
+import contentImage4 from "./assets/Image-4-05.png";
+import contentImage5 from "./assets/Image-4-06.png";
+import contentImage6 from "./assets/Image-4-07.png";
+import contentImage7 from "./assets/Image-4-08.png";
+import contentImage8 from "./assets/Image-4-09.png";
+import contentImage9 from "./assets/Image-4-10.png";
 
 function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,94 +68,144 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
     readTime: "12 min read",
     category: "Design",
     tags: ["Grid System", "UI Design", "Layout", "Design System"],
-    heroImage:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=600&fit=crop",
+    heroImage: heroImage,
     content: `
-      <p>Grid systems are the backbone of great user interface design. They provide structure, consistency, and visual harmony that makes digital products not only beautiful but also functional and intuitive to use. In this comprehensive guide, we'll explore how to implement effective grid systems that will elevate your UI design to the next level.</p>
+      <p>A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.</p>
 
-      <h2>What is a Grid System?</h2>
+      <p>If you've been to New York City and have walked the streets, it is easy to figure out how to get from one place to another because of the grid system that the city is built on. Just as the predictability of a city grid helps locals and tourists get around easily, so do webpage grids provide a structure that guides users and designers alike. Because of their consistent reference point, grids improve page readability and scannability and allow people to quickly get where they need to go.</p> 
+
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage1} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Definition: A grid is made up of columns, gutters, and margins that provide a structure for the layout of elements on a page.
+        </figcaption>
+      </figure>
+
+      <p>There are three common grid types used in websites and interfaces: column grid, modular grid, and hierarchical grid.</p>
+
+      <p>Column grid involves dividing a page into vertical columns. UI elements and content are then aligned to these columns.</p>
+
+      <p>Modular grid extends the column grid further by adding rows to it. This intersection of columns and rows make up modules to which elements and content are aligned. Modular grids are great for ecommerce and listing pages, as rows are repeatable to accommodate browsing.</p>
+
+      <p>Hierarchical grid: Content is organized by importance using columns, rows, and modules. The most important elements and pieces of content take up the biggest pieces of the grid.</p>
+
+      <h3>Breaking Down the Grid</h3>
+
+      <p>Regardless of the type of grid you are using, the grid is made up of three elements: columns, gutters, and margins.</p>
+
+      <p><strong>Columns:</strong> Columns take up most of the real estate in a grid. Elements and content are placed in columns. To adapt to any screen size, column widths are generally defined with percentages rather than fixed values and the number of columns will vary. For example, a grid on a mobile device might have 4 columns and a grid on a desktop might have 12 columns.</p>
+
+      <p><strong>Gutters:</strong> The gutter is the space between columns that separates elements and content from different columns. Gutter widths are fixed values but can change based on different breakpoints. For example, wider gutters are appropriate for larger screens, whereas smaller gutters are appropriate for smaller screens like mobile.</p>
+
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage2} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Three elements make up any grid: (1) columns, (2) gutters, and (3) margins.
+        </figcaption>
+      </figure>
+
+      <h3>Examples of Grids in Use</h3>
+
+      <p><strong>Example 1: Hierarchical Grid</strong></p>
+
+      <p>
+        Our first example is from <a href="https://www.nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times</a>. This screen utilizes a hierarchical grid to create a newspaper-like reading experience. At desktop screen size, two main columns make up the hierarchical grid. The most important news story takes up the most space in the grid, the left column, followed by secondary and tertiary stories, which take up the smaller column and modules on the right.
+      </p>
+
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage3} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          The New York Times uses a hierarchical grid to achieve its newspaper-like reading experience. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+        </figcaption>
+      </figure>
+
+      <p><strong>Example 2: Column Grid</strong></p>
+
+      <p>
+        Our second example is from <a href="https://www.ritual.com" target="_blank" rel="noopener noreferrer">Ritual.com</a>, a vitamin company. This design uses a column grid to create an attractive visual experience. At this screen size, four consistently sized columns make up the grid structure and elements are aligned to and within these columns. The gutters, the spaces in between the columns, are also consistently sized and help the user visually separate the different products. The margins are independently sized and are the same between the left and right sides.
+      </p>
       
-      <p>A grid system is a structure comprising a series of horizontal and vertical lines used to arrange content. It's the invisible foundation that guides the placement of elements on a page, creating order from chaos and ensuring consistency across different screens and components.</p>
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage4} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Ritual’s four-column grid makes scanning products easy. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+        </figcaption>
+      </figure>
 
-      <p>Think of a grid system as the skeleton of your design—it's not always visible to the end user, but it provides the essential structure that makes everything else work harmoniously together.</p>
+      <p><strong>Example 3: Modular Grid</strong></p>
 
-      <h2>The Anatomy of a Grid System</h2>
+      <p>Our third example is from Behance, a design library. The site’s design uses a modular grid to create a pleasant browsing experience. At desktop size, rows are made up of 4 consistently sized modules. Horizontal gutters are slightly thicker than vertical gutters and the margins are consistently sized on the left and right of the design. Like in previous example, the gutters visually separate each element.</p>
 
-      <p>Understanding the components of a grid system is crucial for implementing it effectively:</p>
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage5} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Behance’s design uses a modular grid, which allows users to easily browse. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+        </figcaption>
+      </figure>
+      
+      <p><strong>Example 4: Breaking the Grid</strong></p>
 
-      <h3>Columns</h3>
-      <p>Columns are the vertical sections that divide your layout. Most modern grid systems use 12 columns, but this can vary based on your design needs. The beauty of a 12-column system is its flexibility—you can create layouts with 1, 2, 3, 4, 6, or 12 columns by combining or dividing these base units.</p>
+      <p>
+        Our last example is <a href="https://m2.material.io/design/material-studies/shrine.html#product-architecture" target="_blank" rel="noopener noreferrer">Shrine from Google’s Material Studies</a>. This design uses a column grid, as we can see based on the left navigation, which is 2 columns wide. Look closely and you will see that some product images settle to the margins, while others do not. Breaking the grid like this makes it challenging to focus or quickly scan product images and calls more attention to some products over others. It is okay to break the grid every so often, as long as you have a valid reason for it.
+      </p>
 
-      <h3>Gutters</h3>
-      <p>Gutters are the spaces between columns. They provide breathing room and prevent elements from feeling cramped. Consistent gutter widths are essential for maintaining visual rhythm throughout your design.</p>
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage6} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Breaking the grid produces a chaotic browsing experience for users. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+        </figcaption>
+      </figure>
 
-      <h3>Margins</h3>
-      <p>Margins are the spaces on the outer edges of your grid. They frame your content and ensure it doesn't touch the edges of the screen, providing a comfortable reading experience.</p>
+      <p><strong>Benefits of the Grid</strong></p>
 
-      <blockquote>
-        "Good design is obvious. Great design is transparent. A well-implemented grid system is the difference between the two."
-      </blockquote>
-
-      <h2>Benefits of Using Grid Systems</h2>
-
-      <h3>Consistency</h3>
-      <p>Grid systems ensure that elements align properly across different pages and components. This consistency creates a cohesive user experience and makes your product feel polished and professional.</p>
-
-      <h3>Scalability</h3>
-      <p>When you have a solid grid foundation, adding new components or pages becomes much easier. The grid provides a framework that new elements can fit into naturally.</p>
-
-      <h3>Responsive Design</h3>
-      <p>Modern grid systems are built with responsiveness in mind. They adapt seamlessly to different screen sizes, ensuring your design looks great on everything from mobile phones to large desktop monitors.</p>
-
-      <h3>Faster Development</h3>
-      <p>With a well-defined grid system, developers can work more efficiently. They don't need to guess spacing or alignment—the grid provides clear guidelines for implementation.</p>
-
-      <h2>Implementing Grid Systems in Practice</h2>
-
-      <h3>Choose Your Base Unit</h3>
-      <p>Start by defining a base unit for your grid. This could be 8px, 16px, or any value that works for your design. This base unit should be used consistently throughout your system for spacing, sizing, and alignment.</p>
-
-      <h3>Define Breakpoints</h3>
-      <p>Establish clear breakpoints for different device sizes. Common breakpoints include:</p>
+      <p>Using a grid benefits both end users and the designers alike:</p>
+     
       <ul>
-        <li>Mobile: 320px - 768px</li>
-        <li>Tablet: 768px - 1024px</li>
-        <li>Desktop: 1024px and above</li>
+        <li>Designers can quickly put together well-aligned interfaces.</li>
+        <li>Users can easily scan predictable grid-based interfaces.</li>
+        <li>A good grid is easy to adapt to various screen sizes and orientations. In fact, grid layouts are an essential component of responsive web design. Responsive design uses breakpoints to determine the screen size threshold at which the layout should change. For example, a desktop screen may have 12 grid columns, which may be stacked on mobile so that the resulting layout has only 4 columns.</li>
       </ul>
 
-      <h3>Create Component Guidelines</h3>
-      <p>Document how different components should behave within your grid system. This includes how they span across columns, how they stack on mobile devices, and how spacing should be handled.</p>
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage7} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          At the mobile size, Behance’s one-column grid (left) was reflowed into a four-column grid structure (right).
+        </figcaption>
+      </figure>
 
-      <h2>Common Grid System Mistakes to Avoid</h2>
+      <p>Even more importantly, the grid is not a throw-away concept. It is used by both designers and developers alike. Be sure to communicate with your developers the grid structure used when creating the design, so they can implement it accordingly.</p>
 
-      <h3>Over-complicating the System</h3>
-      <p>Keep your grid system simple and intuitive. If team members can't understand it quickly, it's probably too complex.</p>
+      <h3>Choosing and Setting Up Your Grid</h3>
 
-      <h3>Ignoring Content Hierarchy</h3>
-      <p>Your grid should support content hierarchy, not fight against it. Make sure important content gets appropriate visual weight and positioning within the grid.</p>
+      <p>How you use and set up a grid is fundamental to creating well thought out layouts and experiences for your user.</p>
 
-      <h3>Forgetting About Mobile</h3>
-      <p>Always design your grid system with mobile-first principles. It's easier to scale up from mobile than to scale down from desktop.</p>
+      <p><strong>Choose the right grid for your needs.</strong> Take time to think through what type of grid ­— column, modular, or hierarchical — best suits your needs. A hierarchical grid may be the best fit if one item on your page will always be more important than the surrounding elements. For example, hierarchical grids are great for online news platforms. If the content you need to display is highly variable, consider using a basic column or modular grid, as these provide lots of flexibility when designing. For example, elements and content can span across multiple columns or modules or just one to fit design needs.</p>
 
-      <h2>Tools and Frameworks</h2>
+      <p><strong>Spend time setting up your grid.</strong> Once you have figured out what type of grid will work well for your needs, start setting it up. Determine the number of columns and the margin and gutter sizes relative to your screen sizes. You will most likely want to prepare for mobile, tablet, and desktop screens. A 12-column grid at laptop or desktop size is generally flexible enough for most design needs. The number of columns will decrease as your device size decreases. Wireframing tools like Sketch and Figma have quick and easy ways to set up and edit your grid, even after you have started designing.</p>
+      
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage8} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Easily set the number of columns, the gutter size, and margin size in Figma.
+        </figcaption>
+      </figure>
+      
+      <p><strong>Always place content within columns, not gutters.</strong> The gutters should remain empty as you place elements on the grid in order to clearly separate and align content and elements.</p>
+      
+      <figure style={{ margin: "2rem 0" }}>
+        <img src=${contentImage9} alt="Grid system illustration" style={{ width: "100%" }} />
+        <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
+          Content or elements should be placed within and across columns, not gutters.
+        </figcaption>
+      </figure>
 
-      <p>There are many excellent tools and frameworks available for implementing grid systems:</p>
+      <p><strong>Consider using an 8px grid system.</strong> For most common devices, the screen size in pixels is a multiple of 8. Keeping grid-component values at a multiple of 8 will generally make it easier to scale and implement a grid.</p>
+      
+      <h3>Conclusion</h3>
 
-      <ul>
-        <li><strong>CSS Grid:</strong> Native CSS solution with powerful layout capabilities</li>
-        <li><strong>Flexbox:</strong> Great for one-dimensional layouts and component-level grids</li>
-        <li><strong>Bootstrap:</strong> Popular framework with a robust 12-column grid system</li>
-        <li><strong>CSS Grid Generator:</strong> Online tools for quickly generating grid CSS</li>
-      </ul>
+      <p>Grids not only provide designers a structure on which to base layouts, but they also improve readability and scannability for end users. Use a good grid system that easily adapts to various screen sizes.</p>
+      `,
 
-      <h2>Conclusion</h2>
-
-      <p>A well-implemented grid system is one of the most powerful tools in a designer's toolkit. It provides the foundation for creating consistent, scalable, and beautiful user interfaces that work across all devices and screen sizes.</p>
-
-      <p>Remember, the best grid system is one that serves your content and users, not the other way around. Start simple, iterate based on real usage, and always keep the user experience at the center of your decisions.</p>
-
-      <p>By mastering grid systems, you'll not only create better designs but also improve collaboration with developers and speed up your entire design process. The investment in learning and implementing proper grid systems pays dividends in every project you work on.</p>
-    `,
     relatedPosts: [
       {
         id: "2",
