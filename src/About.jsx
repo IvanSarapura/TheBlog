@@ -166,6 +166,32 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
         "Implemented automated testing",
       ],
     },
+    {
+      company: "DigitalAgency",
+      position: "Semi Senior Frontend Developer",
+      period: "2017 - 2018",
+      description:
+        "Developed and maintained multiple client websites using modern frontend technologies. Collaborated with designers and backend developers to deliver high-quality products.",
+      technologies: ["React", "Vue.js", "JavaScript", "Sass"],
+      achievements: [
+        "Delivered 15+ client projects",
+        "Improved code quality standards",
+        "Mentored 2 junior developers",
+      ],
+    },
+    {
+      company: "WebSolutions",
+      position: "Junior Frontend Developer",
+      period: "2016 - 2017",
+      description:
+        "Started my professional journey building responsive websites and learning modern web development practices. Worked on various projects under senior developer supervision.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "jQuery"],
+      achievements: [
+        "Built 10+ responsive websites",
+        "Learned modern development workflows",
+        "Contributed to team projects",
+      ],
+    },
   ];
 
   const education = [
@@ -181,6 +207,14 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
         "Teaching Assistant",
         "Published 3 papers",
       ],
+      type: "Graduate",
+      field: "Computer Science",
+      location: "Stanford, CA",
+      achievements: [
+        "Summa Cum Laude",
+        "Dean's Fellowship",
+        "Best Thesis Award",
+      ],
     },
     {
       institution: "University of California, Berkeley",
@@ -194,12 +228,41 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
         "Design Award Winner",
         "Student Council President",
       ],
+      type: "Undergraduate",
+      field: "Design",
+      location: "Berkeley, CA",
+      achievements: [
+        "Magna Cum Laude",
+        "Design Excellence Award",
+        "Leadership Award",
+      ],
+    },
+    {
+      institution: "MIT OpenCourseWare",
+      degree: "Self-Directed Learning",
+      period: "2015 - Present",
+      description:
+        "Continuous learning through online courses in advanced computer science, machine learning, and emerging technologies.",
+      gpa: "N/A",
+      highlights: [
+        "Completed 20+ courses",
+        "Specialized in AI/ML",
+        "Modern Web Technologies",
+      ],
+      type: "Online",
+      field: "Computer Science",
+      location: "Online",
+      achievements: [
+        "Machine Learning Certificate",
+        "Web Development Specialization",
+        "AI Fundamentals",
+      ],
     },
   ];
 
   const stats = [
     { number: "150+", label: "Blog Posts" },
-    { number: "25K+", label: "Monthly Readers" },
+    { number: "25K+", label: "Readers" },
     { number: "500+", label: "Comments" },
     { number: "4.8", label: "Average Rating" },
   ];
@@ -207,7 +270,7 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
   const experienceStats = [
     { number: "8+", label: "Years Experience" },
     { number: "50+", label: "Projects Completed" },
-    { number: "15+", label: "Technologies" },
+    { number: "15+", label: "Technologies Used" },
     { number: "100%", label: "Client Satisfaction" },
   ];
 
@@ -730,6 +793,17 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
                           </p>
                         </div>
                       </div>
+                      <div className="about-me-independent-feature-item">
+                        <div className="about-me-independent-feature-content">
+                          <h4 className="about-me-independent-feature-title">
+                            Creative Thinker
+                          </h4>
+                          <p className="about-me-independent-feature-description">
+                            Bring innovative solutions and creative approaches
+                            to every project
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="about-me-independent-sidebar">
@@ -832,7 +906,7 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
                 <h2 className="section-title">Professional Experience</h2>
                 <div className="experience-layout">
                   <div className="experience-main">
-                    <div className="about-me-features">
+                    <div className="experience-features">
                       {experience.map((job, index) => (
                         <div key={index} className="feature-item">
                           <div className="feature-content">
@@ -898,36 +972,108 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
             {activeTab === "education" && (
               <div className="about-content-section">
                 <h2 className="section-title">Education</h2>
-                <div className="education-grid">
-                  {education.map((edu, index) => (
-                    <div key={index} className="education-card">
-                      <div className="education-header">
-                        <div className="education-badge">
-                          <span className="badge-text">Degree</span>
-                        </div>
-                        <h3 className="education-degree">{edu.degree}</h3>
-                        <span className="education-institution">
-                          {edu.institution}
-                        </span>
-                        <span className="education-period">{edu.period}</span>
-                      </div>
-                      <p className="education-description">{edu.description}</p>
-                      <div className="education-highlights">
-                        <h4 className="highlights-title">Highlights:</h4>
-                        <ul className="highlights-list">
-                          {edu.highlights.map((highlight, idx) => (
-                            <li key={idx} className="highlight-item">
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="education-gpa">
-                        <span className="gpa-label">GPA:</span>
-                        <span className="gpa-value">{edu.gpa}</span>
+                <div className="education-layout">
+                  <div className="education-main">
+                    <div className="education-features">
+                      <div className="education-timeline">
+                        {education.map((edu, index) => (
+                          <div key={index} className="education-timeline-item">
+                            <div className="timeline-marker">
+                              <div className="marker-dot"></div>
+                              <div className="marker-line"></div>
+                            </div>
+                            <div className="timeline-content">
+                              <div className="education-degree">
+                                <h3 className="degree-title">{edu.degree}</h3>
+                                <div className="degree-meta">
+                                  <span className="institution">
+                                    {edu.institution}
+                                  </span>
+                                  <span className="period">{edu.period}</span>
+                                </div>
+                                <div className="degree-gpa">
+                                  <span className="gpa-label">GPA</span>
+                                  <span className="gpa-value">{edu.gpa}</span>
+                                </div>
+                              </div>
+                              <div className="education-details">
+                                <p className="degree-description">
+                                  {edu.description}
+                                </p>
+                                <div className="field-info">
+                                  <span className="field-label">Field</span>
+                                  <span className="field-value">
+                                    {edu.field}
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="education-achievements">
+                                {edu.achievements.map((achievement, idx) => (
+                                  <div key={idx} className="achievement-tag">
+                                    {achievement}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="education-sidebar">
+                    <div className="education-stats">
+                      <div className="education-stat-card">
+                        <div className="education-stat-number">3</div>
+                        <div className="education-stat-label">
+                          Degrees & Certifications
+                        </div>
+                      </div>
+                      <div className="education-stat-card">
+                        <div className="education-stat-number">8+</div>
+                        <div className="education-stat-label">
+                          Years of Learning
+                        </div>
+                      </div>
+                      <div className="education-stat-card">
+                        <div className="education-stat-number">20+</div>
+                        <div className="education-stat-label">
+                          Online Courses
+                        </div>
+                      </div>
+                      <div className="education-stat-card">
+                        <div className="education-stat-number">3.85</div>
+                        <div className="education-stat-label">Average GPA</div>
+                      </div>
+                    </div>
+                    <div className="education-certifications">
+                      <h3 className="education-certifications-title">
+                        Certifications
+                      </h3>
+                      <div className="education-certifications-grid">
+                        {education.map((edu) => (
+                          <div
+                            key={edu.institution}
+                            className="education-certification-card"
+                          >
+                            <div className="certification-content">
+                              <span className="certification-type">
+                                {edu.type}
+                              </span>
+                              <h4 className="certification-title">
+                                {edu.degree}
+                              </h4>
+                              <p className="certification-institution">
+                                {edu.institution}
+                              </p>
+                              <p className="certification-period">
+                                {edu.period}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
