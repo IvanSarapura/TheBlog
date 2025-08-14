@@ -336,7 +336,10 @@ function App() {
             <h2 className="section-heading">Recent blog posts</h2>
             <div className="blog-grid">
               {/* Left Column - Main Blog Card */}
-              <div className="blog-card main-card">
+              <div
+                className="blog-card main-card clickable-card"
+                onClick={() => navigateToPost("1")}
+              >
                 <div className="card-image">
                   <img src={image1} alt="UX review presentations" />
                 </div>
@@ -371,7 +374,10 @@ function App() {
 
               {/* Right Column - Secondary Blog Cards */}
               <div className="secondary-cards">
-                <div className="blog-card secondary-card">
+                <div
+                  className="blog-card secondary-card clickable-card"
+                  onClick={() => navigateToPost("2")}
+                >
                   <div className="card-image">
                     <img src={image2} alt="Migrating to Linear 101" />
                   </div>
@@ -401,7 +407,10 @@ function App() {
                   </div>
                 </div>
 
-                <div className="blog-card secondary-card">
+                <div
+                  className="blog-card secondary-card clickable-card"
+                  onClick={() => navigateToPost("3")}
+                >
                   <div className="card-image">
                     <img src={image3} alt="Building your API Stack" />
                   </div>
@@ -441,7 +450,7 @@ function App() {
             <div className="featured-content">
               <div
                 className="blog-card featured-card clickable-card"
-                onClick={() => navigateToPost("1")}
+                onClick={() => navigateToPost("4")}
               >
                 <div className="card-image">
                   <img
@@ -486,7 +495,10 @@ function App() {
             <h2 className="section-heading">All blog posts</h2>
             <div className="posts-grid">
               {/* Row 1 */}
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("5")}
+              >
                 <div className="card-image">
                   <img
                     src={image5}
@@ -523,7 +535,10 @@ function App() {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("6")}
+              >
                 <div className="card-image">
                   <img
                     src={image6}
@@ -559,7 +574,10 @@ function App() {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("7")}
+              >
                 <div className="card-image">
                   <img
                     src={image7}
@@ -593,7 +611,10 @@ function App() {
               </div>
 
               {/* Row 2 */}
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("8")}
+              >
                 <div className="card-image">
                   <img
                     src={image8}
@@ -626,7 +647,10 @@ function App() {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("9")}
+              >
                 <div className="card-image">
                   <img
                     src={image9}
@@ -662,7 +686,10 @@ function App() {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToPost("10")}
+              >
                 <div className="card-image">
                   <img
                     src={image10}

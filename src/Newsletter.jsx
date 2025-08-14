@@ -15,6 +15,39 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Function to navigate to a specific newsletter
+  const navigateToNewsletter = (newsletterId) => {
+    // For now, we'll just log the newsletter ID
+    // In the future, this could navigate to individual newsletter pages
+    console.log(`Navigating to newsletter: ${newsletterId}`);
+  };
+
+  // Newsletter data with IDs
+  const newsletters = [
+    {
+      id: "1",
+      title: "Design Trends 2024",
+      category: "Design",
+      date: "January 2024",
+      description:
+        "Exploring the latest design trends and how they're shaping the industry.",
+    },
+    {
+      id: "2",
+      title: "Development Best Practices",
+      category: "Development",
+      date: "February 2024",
+      description: "Essential best practices for modern web development.",
+    },
+    {
+      id: "3",
+      title: "UX Research Insights",
+      category: "Research",
+      date: "March 2024",
+      description: "Deep dive into user experience research methodologies.",
+    },
+  ];
+
   // Handle navbar visibility on scroll
   useEffect(() => {
     let ticking = false;
@@ -300,7 +333,10 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
             <h2 className="section-heading">All blog posts</h2>
             <div className="posts-grid">
               {/* Row 1 - Copied from Blog page */}
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToNewsletter("1")}
+              >
                 <div className="card-image">
                   <img
                     src={image5}
@@ -337,7 +373,10 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToNewsletter("2")}
+              >
                 <div className="card-image">
                   <img
                     src={image6}
@@ -373,7 +412,10 @@ function Newsletter({ darkMode, setDarkMode, setCurrentPage }) {
                 </div>
               </div>
 
-              <div className="blog-card post-card">
+              <div
+                className="blog-card post-card clickable-card"
+                onClick={() => navigateToNewsletter("3")}
+              >
                 <div className="card-image">
                   <img
                     src={image7}

@@ -15,6 +15,68 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Function to navigate to a specific project
+  const navigateToProject = (projectId) => {
+    // For now, we'll just log the project ID
+    // In the future, this could navigate to individual project pages
+    console.log(`Navigating to project: ${projectId}`);
+  };
+
+  // Projects data with IDs
+  const projects = [
+    {
+      id: "1",
+      title:
+        "How to participate in volunteering activities in the New Zealand Islands",
+      category: "Volunteering",
+      date: "2024",
+      description:
+        "A comprehensive full-stack web application that demonstrates advanced development techniques, modern architecture, and scalable design patterns. The project is a web application that allows users to manage their hotel reservations and bookings. The project is built with React.js for the frontend and Node.js for the backend. The project is deployed on Vercel.",
+      image: image13,
+      categories: ["design", "research", "presentation", "collaboration"],
+    },
+    {
+      id: "2",
+      title: "Mobile App Development for E-commerce Platform",
+      category: "Mobile Development",
+      date: "2024",
+      description:
+        "A cross-platform mobile application built with React Native that provides a seamless shopping experience for users. Features include product browsing, secure payment processing, order tracking, and personalized recommendations.",
+      image: image11,
+      categories: ["mobile", "app", "fullstack"],
+    },
+    {
+      id: "3",
+      title: "AI-Powered Analytics Dashboard",
+      category: "Data Science",
+      date: "2024",
+      description:
+        "An intelligent analytics platform that uses machine learning algorithms to provide real-time insights and predictive analytics for business decision-making.",
+      image: image12,
+      categories: ["development", "ui", "ecommerce"],
+    },
+    {
+      id: "4",
+      title: "Sustainable Energy Management System",
+      category: "IoT & Energy",
+      date: "2024",
+      description:
+        "An Internet of Things (IoT) solution for monitoring and optimizing energy consumption in commercial buildings, helping reduce carbon footprint and operational costs.",
+      image: image14,
+      categories: ["platform", "saas", "tools"],
+    },
+    {
+      id: "5",
+      title: "Blockchain-Based Supply Chain Tracker",
+      category: "Blockchain",
+      date: "2024",
+      description:
+        "A decentralized application (DApp) that provides end-to-end transparency and traceability in supply chain management using blockchain technology.",
+      image: image15,
+      categories: ["development", "ui", "ecommerce"],
+    },
+  ];
+
   // Handle navbar visibility on scroll
   useEffect(() => {
     let ticking = false;
@@ -250,7 +312,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
             {/* First Row - Featured Project + 2 Small Cards */}
             <div className="projects-row featured-layout">
-              <div className="project-card featured">
+              <div
+                className="project-card featured clickable-card"
+                onClick={() => navigateToProject("1")}
+              >
                 <div className="card-image">
                   <img src={image13} alt="Featured Project" />
                 </div>
@@ -304,7 +369,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
               </div>
 
               <div className="small-cards-column">
-                <div className="project-card small">
+                <div
+                  className="project-card small clickable-card"
+                  onClick={() => navigateToProject("2")}
+                >
                   <div className="card-image">
                     <img src={image11} alt="Project 1" />
                   </div>
@@ -336,7 +404,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                   </div>
                 </div>
 
-                <div className="project-card small">
+                <div
+                  className="project-card small clickable-card"
+                  onClick={() => navigateToProject("3")}
+                >
                   <div className="card-image">
                     <img src={image12} alt="Project 2" />
                   </div>
@@ -372,7 +443,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
             {/* Second Row - 2 Cards */}
             <div className="projects-row">
-              <div className="project-card">
+              <div
+                className="project-card clickable-card"
+                onClick={() => navigateToProject("4")}
+              >
                 <div className="card-image">
                   <img src={image14} alt="Project 4" />
                 </div>
@@ -404,7 +478,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 </div>
               </div>
 
-              <div className="project-card">
+              <div
+                className="project-card clickable-card"
+                onClick={() => navigateToProject("5")}
+              >
                 <div className="card-image">
                   <img src={image15} alt="Project 5" />
                 </div>
@@ -439,7 +516,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
             {/* Third Row - 2 Cards */}
             <div className="projects-row">
-              <div className="project-card">
+              <div
+                className="project-card clickable-card"
+                onClick={() => navigateToProject("6")}
+              >
                 <div className="card-image">
                   <img src={image14} alt="Project 6" />
                 </div>
@@ -471,7 +551,10 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
                 </div>
               </div>
 
-              <div className="project-card">
+              <div
+                className="project-card clickable-card"
+                onClick={() => navigateToProject("7")}
+              >
                 <div className="card-image">
                   <img src={image15} alt="Project 7" />
                 </div>
