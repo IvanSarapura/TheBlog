@@ -15,6 +15,17 @@ import contentImage6 from "./assets/Image-4-07.png";
 import contentImage7 from "./assets/Image-4-08.png";
 import contentImage8 from "./assets/Image-4-09.png";
 import contentImage9 from "./assets/Image-4-10.png";
+// Import all blog post images
+import image1 from "./assets/Image-1.png";
+import image2 from "./assets/Image-2.png";
+import image3 from "./assets/Image-3.png";
+import image4 from "./assets/Image-4.png";
+import image5 from "./assets/Image-5.png";
+import image6 from "./assets/Image-6.png";
+import image7 from "./assets/Image-7.png";
+import image8 from "./assets/Image-8.png";
+import image9 from "./assets/Image-9.png";
+import image10 from "./assets/Image-10.png";
 
 function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,6 +67,110 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  // All blog posts data from the Blog page
+  const allBlogPosts = [
+    {
+      id: "1",
+      title: "UX review presentations",
+      author: "Olivia Rhye",
+      date: "20 Jan 2024",
+      description:
+        "How do you create compelling presentations that wow your colleagues and impress your managers?",
+      image: image1,
+      categories: ["design", "research", "presentation"],
+    },
+    {
+      id: "2",
+      title: "Migrating to Linear 101",
+      author: "Phoenix Baker",
+      date: "19 Jan 2024",
+      description:
+        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here's how to get started.",
+      image: image2,
+      categories: ["design", "research"],
+    },
+    {
+      id: "3",
+      title: "Building your API Stack",
+      author: "Lana Steiner",
+      date: "18 Jan 2024",
+      description:
+        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and managing them.",
+      image: image3,
+      categories: ["design", "research"],
+    },
+    {
+      id: "4",
+      title: "Grid system for better Design User Interface",
+      author: "Olivia Rhye",
+      date: "18 Jan 2024",
+      description:
+        "A grid system is a design tool used to arrange content on a webpage using vertical and horizontal lines. It helps create consistent layouts and makes websites more visually appealing and easier to navigate.",
+      image: image4,
+      categories: ["design", "interface"],
+    },
+    {
+      id: "5",
+      title: "Bill Walsh leadership lessons of finance and business",
+      author: "Alec Whitten",
+      date: "20 Jan 2024",
+      description:
+        "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+      image: image5,
+      categories: ["leadership", "management"],
+    },
+    {
+      id: "6",
+      title: "PM mental models for product managers",
+      author: "Demi Wilkinson",
+      date: "19 Jan 2024",
+      description:
+        "Mental models are simple expressions of complex processes or relationships.",
+      image: image6,
+      categories: ["product", "research", "frameworks"],
+    },
+    {
+      id: "7",
+      title: "What is Wireframing in the tech industry?",
+      author: "Candice Wu",
+      date: "18 Jan 2024",
+      description:
+        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+      image: image7,
+      categories: ["design", "research"],
+    },
+    {
+      id: "8",
+      title: "How collaboration makes us better designers",
+      author: "Natali Craig",
+      date: "17 Jan 2024",
+      description:
+        "Collaboration can make our teams stronger, and our individual designs better.",
+      image: image8,
+      categories: ["design", "research"],
+    },
+    {
+      id: "9",
+      title: "Our top 10 Javascript frameworks to use in 2025",
+      author: "Drew Cano",
+      date: "16 Jan 2024",
+      description:
+        "JavaScript frameworks make development easy with extensive features and functionalities.",
+      image: image9,
+      categories: ["development", "tools", "saas"],
+    },
+    {
+      id: "10",
+      title: "Podcast: Creating a better CX Community",
+      author: "Orlando Diggs",
+      date: "15 Jan 2024",
+      description:
+        "Starting a community doesn't need to be complicated, but how do you get started?",
+      image: image10,
+      categories: ["podcast", "customer-success"],
+    },
+  ];
 
   // Mock blog post data - Grid system for better Design User Interface
   const blogPost = {
@@ -128,25 +243,25 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
       <figure style={{ margin: "2rem 0" }}>
         <img src=${contentImage4} alt="Grid system illustration" style={{ width: "100%" }} />
         <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
-          Ritual’s four-column grid makes scanning products easy. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+          Ritual's four-column grid makes scanning products easy. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
         </figcaption>
       </figure>
 
       <p><strong>Example 3: Modular Grid</strong></p>
 
-      <p>Our third example is from Behance, a design library. The site’s design uses a modular grid to create a pleasant browsing experience. At desktop size, rows are made up of 4 consistently sized modules. Horizontal gutters are slightly thicker than vertical gutters and the margins are consistently sized on the left and right of the design. Like in previous example, the gutters visually separate each element.</p>
+      <p>Our third example is from Behance, a design library. The site's design uses a modular grid to create a pleasant browsing experience. At desktop size, rows are made up of 4 consistently sized modules. Horizontal gutters are slightly thicker than vertical gutters and the margins are consistently sized on the left and right of the design. Like in previous example, the gutters visually separate each element.</p>
 
       <figure style={{ margin: "2rem 0" }}>
         <img src=${contentImage5} alt="Grid system illustration" style={{ width: "100%" }} />
         <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
-          Behance’s design uses a modular grid, which allows users to easily browse. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
+          Behance's design uses a modular grid, which allows users to easily browse. (We highlighted the columns in yellow, the gutters in blue, and the margins in purple.)
         </figcaption>
       </figure>
       
       <p><strong>Example 4: Breaking the Grid</strong></p>
 
       <p>
-        Our last example is <a href="https://m2.material.io/design/material-studies/shrine.html#product-architecture" target="_blank" rel="noopener noreferrer">Shrine from Google’s Material Studies</a>. This design uses a column grid, as we can see based on the left navigation, which is 2 columns wide. Look closely and you will see that some product images settle to the margins, while others do not. Breaking the grid like this makes it challenging to focus or quickly scan product images and calls more attention to some products over others. It is okay to break the grid every so often, as long as you have a valid reason for it.
+        Our last example is <a href="https://m2.material.io/design/material-studies/shrine.html#product-architecture" target="_blank" rel="noopener noreferrer">Shrine from Google's Material Studies</a>. This design uses a column grid, as we can see based on the left navigation, which is 2 columns wide. Look closely and you will see that some product images settle to the margins, while others do not. Breaking the grid like this makes it challenging to focus or quickly scan product images and calls more attention to some products over others. It is okay to break the grid every so often, as long as you have a valid reason for it.
       </p>
 
       <figure style={{ margin: "2rem 0" }}>
@@ -169,7 +284,7 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
       <figure style={{ margin: "2rem 0" }}>
         <img src=${contentImage7} alt="Grid system illustration" style={{ width: "100%" }} />
         <figcaption style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-secondary-text)", fontFamily: "Inter" }}>
-          At the mobile size, Behance’s one-column grid (left) was reflowed into a four-column grid structure (right).
+          At the mobile size, Behance's one-column grid (left) was reflowed into a four-column grid structure (right).
         </figcaption>
       </figure>
 
@@ -205,39 +320,6 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
 
       <p>Grids not only provide designers a structure on which to base layouts, but they also improve readability and scannability for end users. Use a good grid system that easily adapts to various screen sizes.</p>
       `,
-
-    relatedPosts: [
-      {
-        id: "2",
-        title: "Designing for Accessibility: A Comprehensive Guide",
-        excerpt:
-          "Learn how to create inclusive digital experiences that work for everyone.",
-        image:
-          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
-        date: "March 10, 2024",
-        readTime: "6 min read",
-      },
-      {
-        id: "3",
-        title: "The Psychology of Color in Web Design",
-        excerpt:
-          "Understanding how color choices impact user behavior and perception.",
-        image:
-          "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&h=250&fit=crop",
-        date: "March 5, 2024",
-        readTime: "7 min read",
-      },
-      {
-        id: "4",
-        title: "Modern Typography in Digital Design",
-        excerpt:
-          "How to choose and implement typography that enhances user experience.",
-        image:
-          "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop",
-        date: "February 28, 2024",
-        readTime: "8 min read",
-      },
-    ],
   };
 
   return (
@@ -496,32 +578,78 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
                 <div className="sidebar-section">
                   <h3 className="sidebar-title">Share this post</h3>
                   <div className="share-buttons">
-                    <button className="share-button twitter">Twitter</button>
-                    <button className="share-button linkedin">LinkedIn</button>
-                    <button className="share-button facebook">Facebook</button>
+                    <button className="share-button twitter">
+                      <span>Twitter</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                      </svg>
+                    </button>
+                    <button className="share-button linkedin">
+                      <span>LinkedIn</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </button>
+                    <button className="share-button facebook">
+                      <span>Facebook</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
 
                 <div className="sidebar-section">
-                  <h3 className="sidebar-title">Related Posts</h3>
-                  <div className="related-posts-list">
-                    {blogPost.relatedPosts.map((post) => (
-                      <div key={post.id} className="related-post-item">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="related-post-image"
-                        />
-                        <div className="related-post-content">
-                          <h4 className="related-post-title">{post.title}</h4>
-                          <p className="related-post-excerpt">{post.excerpt}</p>
-                          <div className="related-post-meta">
-                            <span className="related-post-date">
-                              {post.date}
-                            </span>
-                            <span className="related-post-read-time">
-                              {post.readTime}
-                            </span>
+                  <h3 className="sidebar-title">All blog posts</h3>
+                  <div className="sidebar-blog-posts">
+                    {allBlogPosts.map((post) => (
+                      <div
+                        key={post.id}
+                        className="blog-card sidebar-post-card"
+                      >
+                        <div className="card-image">
+                          <img src={post.image} alt={post.title} />
+                        </div>
+                        <div className="card-content">
+                          <div className="card-header">
+                            <h3 className="card-title">
+                              {post.title}
+                              <img
+                                src={arrowIcon}
+                                alt="Read more"
+                                className="arrow-icon"
+                              />
+                            </h3>
+                          </div>
+                          <div className="card-meta">
+                            <span className="author">{post.author}</span>
+                            <span className="date">{post.date}</span>
+                          </div>
+                          <p className="card-description">{post.description}</p>
+                          <div className="card-categories">
+                            {post.categories.map((category) => (
+                              <span
+                                key={category}
+                                className={`category-badge ${category}`}
+                              >
+                                {category.toUpperCase()}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       </div>
