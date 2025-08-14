@@ -632,19 +632,6 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
       </header>
 
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="about-hero page-grid">
-          <div className="container">
-            <div className="hero-ultra-minimalist">
-              <div className="hero-single-line">
-                <span className="hero-name">John Doe</span>
-                <span className="hero-separator">—</span>
-                <span className="hero-role">Developer</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Navigation Tabs */}
         <section className="about-tabs page-grid">
           <div className="container">
@@ -694,11 +681,11 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
                     <h2 className="section-title">About Me</h2>
                     <div className="about-me-independent-text">
                       <p className="about-me-independent-paragraph">
-                        I'm a passionate designer and developer with over 8
-                        years of experience creating digital experiences that
-                        matter. I believe in the power of thoughtful design to
-                        solve complex problems and create meaningful connections
-                        between people and technology.
+                        I'm John Doe, a passionate designer and developer with
+                        over 8 years of experience creating digital experiences
+                        that matter. I believe in the power of thoughtful design
+                        to solve complex problems and create meaningful
+                        connections between people and technology.
                       </p>
                       <p className="about-me-independent-paragraph">
                         My journey in design started with a curiosity about how
