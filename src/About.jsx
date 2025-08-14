@@ -635,53 +635,11 @@ function About({ darkMode, setDarkMode, setCurrentPage }) {
         {/* Hero Section */}
         <section className="about-hero page-grid">
           <div className="container">
-            <div className="about-hero-content">
-              <div className="about-hero-text">
-                <div className="about-hero-badge">
-                  <span className="badge-text">
-                    Available for new opportunities
-                  </span>
-                </div>
-                <h1 className="about-hero-title">
-                  Hi, I'm <span className="highlight">John Doe</span>
-                </h1>
-                <p className="about-hero-subtitle">
-                  Senior Frontend Developer & UI/UX Designer
-                </p>
-                <p className="about-hero-description">
-                  Passionate about creating exceptional digital experiences that
-                  combine beautiful design with powerful functionality. 8+ years
-                  of experience building products that users love.
-                </p>
-                <div className="about-hero-actions">
-                  <button className="about-btn primary">Download CV</button>
-                  <button className="about-btn secondary">Get in Touch</button>
-                </div>
-                <div className="about-hero-stats">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="hero-stat">
-                      <div className="stat-content">
-                        <div className="stat-number">{stat.number}</div>
-                        <div className="stat-label">{stat.label}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="about-hero-image">
-                <div className="about-image-container">
-                  <div className="about-image-background"></div>
-                  <img
-                    src={imagePerson}
-                    alt="John Doe"
-                    className="about-profile-image"
-                  />
-                  <div className="about-image-decoration">
-                    <div className="decoration-circle circle-1"></div>
-                    <div className="decoration-circle circle-2"></div>
-                    <div className="decoration-circle circle-3"></div>
-                  </div>
-                </div>
+            <div className="hero-ultra-minimalist">
+              <div className="hero-single-line">
+                <span className="hero-name">John Doe</span>
+                <span className="hero-separator">—</span>
+                <span className="hero-role">Developer</span>
               </div>
             </div>
           </div>
