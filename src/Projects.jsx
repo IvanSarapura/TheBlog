@@ -484,7 +484,8 @@ function Projects() {
                     </div>
                     <p className="card-description">
                       The natural activism is a movement that focuses on
-                      protecting and preserving the natural environment.
+                      protecting and preserving the natural environment and
+                      wildlife.
                     </p>
                     <div className="card-categories">
                       <span className="category-badge ecommerce">
