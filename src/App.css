@@ -1545,7 +1545,7 @@ body {
   border: 1px solid var(--color-border-light);
   border-radius: 16px;
   padding: 2.5rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1564,13 +1564,13 @@ body {
     var(--secondary-color)
   );
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.6s ease;
   z-index: 0;
 }
 
 .education-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   border-color: var(--primary-color);
 }
 
@@ -1976,6 +1976,7 @@ body {
   margin: 0 0 1.5rem 0;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 .blog-post-hero-image {
@@ -1983,6 +1984,7 @@ body {
   height: 400px;
   object-fit: cover;
   display: block;
+  border-radius: 6px;
 }
 
 /* Blog Post Content */
@@ -2308,7 +2310,7 @@ body {
 .sidebar-post-card {
   background: var(--color-background-white);
   border: 1px solid var(--color-border-light);
-  border-radius: 0;
+  border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
@@ -2316,7 +2318,7 @@ body {
 
 .sidebar-post-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .sidebar-post-card .card-image {
@@ -2395,11 +2397,12 @@ body {
 .clickable-card {
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
 .clickable-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 /* Responsive Design for Blog Post */
@@ -2698,7 +2701,7 @@ body {
 .about-card {
   width: 100%;
   background: var(--color-background-white);
-  border-radius: 0;
+  border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid var(--color-border-light);
@@ -3992,7 +3995,7 @@ body {
   display: flex;
   flex-direction: column;
   background: var(--color-background-white);
-  border-radius: 0;
+  border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid var(--color-border-light);
@@ -4812,7 +4815,7 @@ body {
 .stat-card {
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -4993,6 +4996,33 @@ body {
   font-weight: 600;
   color: var(--color-primary-text);
   margin: 0;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.about-me-independent-feature-title::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-text),
+    var(--color-secondary-text)
+  );
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 1px;
+}
+
+.about-me-independent-feature-item:hover .about-me-independent-feature-title {
+  color: var(--color-primary-text);
+}
+
+.about-me-independent-feature-item:hover
+  .about-me-independent-feature-title::after {
+  width: 100%;
 }
 
 .about-me-independent-feature-description {
@@ -5017,7 +5047,7 @@ body {
 .about-me-independent-stat-card {
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -5119,7 +5149,7 @@ body {
   gap: 1rem;
   padding: 1rem;
   background: var(--color-background-white);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid var(--color-border-light);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -5201,7 +5231,7 @@ body {
   gap: 1rem;
   padding: 1rem;
   background: var(--color-background-white);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid var(--color-border-light);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -5307,46 +5337,10 @@ body {
 .skills-category-section {
   background: var(--color-background-white);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 2rem;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.skills-category-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.6s ease;
-}
-
-[data-theme="dark"] .skills-category-section::before {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-}
-
-.skills-category-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-border-light);
-}
-
-.skills-category-section:hover::before {
-  left: 100%;
 }
 
 .skills-category-title {
@@ -5384,7 +5378,7 @@ body {
 .skill-row {
   padding: 1.5rem;
   background: var(--color-background-light);
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
   border: 1px solid var(--color-border-light);
@@ -5452,11 +5446,6 @@ body {
   border-color: var(--color-border-light);
 }
 
-[data-theme="dark"] .skills-category-section:hover {
-  background: var(--color-background-medium);
-  border-color: var(--color-border-light);
-}
-
 [data-theme="dark"] .skill-row {
   background: var(--color-background-medium);
   border-color: var(--color-border-light);
@@ -5517,7 +5506,7 @@ body {
   padding: 1.5rem;
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -5586,7 +5575,7 @@ body {
 .experience-featured-projects {
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 2rem;
 }
 
@@ -5609,7 +5598,7 @@ body {
   gap: 1rem;
   padding: 1rem;
   background: var(--color-background-white);
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
@@ -5621,7 +5610,7 @@ body {
 .experience-project-image {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -6013,7 +6002,7 @@ body {
 .education-stat-card {
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -6089,7 +6078,7 @@ body {
 .education-certifications {
   background: var(--color-background-light);
   border: 1px solid var(--color-border-light);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 2rem;
 }
 
@@ -6109,7 +6098,7 @@ body {
 .education-certification-card {
   background: var(--color-background-white);
   border: 1px solid var(--color-border-light);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -6167,7 +6156,7 @@ body {
   margin: 1rem 0;
   padding: 0.75rem 1rem;
   background: var(--color-background-white);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid var(--color-border-light);
 }
 
@@ -6441,7 +6430,7 @@ body {
 }
 
 .experience-card {
-  animation: fadeInLeft 0.6s ease-out;
+  animation: fadeInLeft 0.8s ease-out;
 }
 
 .experience-card:nth-child(1) {
@@ -6455,7 +6444,7 @@ body {
 }
 
 .education-card {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .education-card:nth-child(1) {

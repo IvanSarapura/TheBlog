@@ -736,7 +736,6 @@ function About() {
               <div className="about-content-section">
                 <div className="about-me-independent-grid">
                   <div className="about-me-independent-main">
-                    <h2 className="section-title">About Me</h2>
                     <div className="about-me-independent-text">
                       <p className="about-me-independent-paragraph">
                         I'm John Doe, a passionate designer and developer with
