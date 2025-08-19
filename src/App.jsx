@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -16,18 +17,13 @@ import image7 from "./assets/Image-7.png";
 import image8 from "./assets/Image-8.png";
 import image9 from "./assets/Image-9.png";
 import image10 from "./assets/Image-10.png";
-import About from "./About";
-import Newsletter from "./Newsletter";
-import Projects from "./Projects";
-import BlogPost from "./BlogPost";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [currentPage, setCurrentPage] = useState("blog");
-  const [currentPostId, setCurrentPostId] = useState(null);
+  const navigate = useNavigate();
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -65,63 +61,6 @@ function App() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Function to navigate to a specific blog post
-  const navigateToPost = (postId) => {
-    setCurrentPostId(postId);
-    setCurrentPage("blog-post");
-  };
-
-  // Function to navigate back to blog
-  const navigateToBlog = () => {
-    setCurrentPostId(null);
-    setCurrentPage("blog");
-  };
-
-  // Render About page if currentPage is "about"
-  if (currentPage === "about") {
-    return (
-      <About
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        setCurrentPage={setCurrentPage}
-      />
-    );
-  }
-
-  // Render Projects page if currentPage is "projects"
-  if (currentPage === "projects") {
-    return (
-      <Projects
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        setCurrentPage={setCurrentPage}
-      />
-    );
-  }
-
-  // Render Newsletter page if currentPage is "newsletter"
-  if (currentPage === "newsletter") {
-    return (
-      <Newsletter
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        setCurrentPage={setCurrentPage}
-      />
-    );
-  }
-
-  // Render BlogPost page if currentPage is "blog-post"
-  if (currentPage === "blog-post") {
-    return (
-      <BlogPost
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        setCurrentPage={setCurrentPage}
-        postId={currentPostId}
-      />
-    );
-  }
-
   return (
     <div className="app" data-theme={darkMode ? "dark" : "light"}>
       <header
@@ -136,44 +75,44 @@ function App() {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <span
-                  className={`nav-link ${
-                    currentPage === "blog" ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentPage("blog")}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Blog
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${
-                    currentPage === "projects" ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentPage("projects")}
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Projects
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${
-                    currentPage === "about" ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentPage("about")}
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   About
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${
-                    currentPage === "newsletter" ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentPage("newsletter")}
+                <NavLink
+                  to="/newsletter"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Newsletter
-                </span>
+                </NavLink>
               </li>
             </ul>
             <div className="theme-toggle">
@@ -268,56 +207,48 @@ function App() {
 
               <ul className="mobile-menu">
                 <li>
-                  <span
-                    className={`mobile-nav-link ${
-                      currentPage === "blog" ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setCurrentPage("blog");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Blog
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${
-                      currentPage === "projects" ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setCurrentPage("projects");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/projects"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Projects
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${
-                      currentPage === "about" ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setCurrentPage("about");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     About
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${
-                      currentPage === "newsletter" ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setCurrentPage("newsletter");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/newsletter"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Newsletter
-                  </span>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -338,7 +269,7 @@ function App() {
               {/* Left Column - Main Blog Card */}
               <div
                 className="blog-card main-card clickable-card"
-                onClick={() => navigateToPost("1")}
+                onClick={() => navigate("/blog/1")}
               >
                 <div className="card-image">
                   <img src={image1} alt="UX review presentations" />
@@ -360,7 +291,8 @@ function App() {
                   </div>
                   <p className="card-description">
                     How do you create compelling presentations that wow your
-                    colleagues and impress your managers?
+                    colleagues and impress your managers with the use of AI in
+                    your presentations or other documents?
                   </p>
                   <div className="card-categories">
                     <span className="category-badge design">Design</span>
@@ -376,7 +308,7 @@ function App() {
               <div className="secondary-cards">
                 <div
                   className="blog-card secondary-card clickable-card"
-                  onClick={() => navigateToPost("2")}
+                  onClick={() => navigate("/blog/2")}
                 >
                   <div className="card-image">
                     <img src={image2} alt="Migrating to Linear 101" />
@@ -409,7 +341,7 @@ function App() {
 
                 <div
                   className="blog-card secondary-card clickable-card"
-                  onClick={() => navigateToPost("3")}
+                  onClick={() => navigate("/blog/3")}
                 >
                   <div className="card-image">
                     <img src={image3} alt="Building your API Stack" />
@@ -450,7 +382,7 @@ function App() {
             <div className="featured-content">
               <div
                 className="blog-card featured-card clickable-card"
-                onClick={() => navigateToPost("4")}
+                onClick={() => navigate("/blog/4")}
               >
                 <div className="card-image">
                   <img
@@ -497,7 +429,7 @@ function App() {
               {/* Row 1 */}
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("5")}
+                onClick={() => navigate("/blog/5")}
               >
                 <div className="card-image">
                   <img
@@ -537,7 +469,7 @@ function App() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("6")}
+                onClick={() => navigate("/blog/6")}
               >
                 <div className="card-image">
                   <img
@@ -576,7 +508,7 @@ function App() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("7")}
+                onClick={() => navigate("/blog/7")}
               >
                 <div className="card-image">
                   <img
@@ -613,7 +545,7 @@ function App() {
               {/* Row 2 */}
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("8")}
+                onClick={() => navigate("/blog/8")}
               >
                 <div className="card-image">
                   <img
@@ -649,7 +581,7 @@ function App() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("9")}
+                onClick={() => navigate("/blog/9")}
               >
                 <div className="card-image">
                   <img
@@ -688,7 +620,7 @@ function App() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToPost("10")}
+                onClick={() => navigate("/blog/10")}
               >
                 <div className="card-image">
                   <img
@@ -777,40 +709,40 @@ function App() {
                   <h4 className="footer-heading">Navigation</h4>
                   <ul className="footer-nav">
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("blog")}
+                        to="/"
                         style={{ cursor: "pointer" }}
                       >
                         Blog
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("projects")}
+                        to="/projects"
                         style={{ cursor: "pointer" }}
                       >
                         Projects
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("about")}
+                        to="/about"
                         style={{ cursor: "pointer" }}
                       >
                         About
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("newsletter")}
+                        to="/newsletter"
                         style={{ cursor: "pointer" }}
                       >
                         Newsletter
-                      </span>
+                      </Link>
                     </li>
                   </ul>
                 </div>

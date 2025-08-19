@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink, useParams } from "react-router-dom";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -27,10 +28,19 @@ import image8 from "./assets/Image-8.png";
 import image9 from "./assets/Image-9.png";
 import image10 from "./assets/Image-10.png";
 
-function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
+function BlogPost() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const params = useParams();
+  const postId = params.postId || "1";
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : false;
+  });
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -336,36 +346,44 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <span
-                  className={`nav-link ${true ? "active" : ""}`}
-                  onClick={() => setCurrentPage("blog")}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Blog
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("projects")}
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Projects
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("about")}
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   About
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("newsletter")}
+                <NavLink
+                  to="/newsletter"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Newsletter
-                </span>
+                </NavLink>
               </li>
             </ul>
             <div className="theme-toggle">
@@ -460,48 +478,48 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
 
               <ul className="mobile-menu">
                 <li>
-                  <span
-                    className={`mobile-nav-link ${true ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("blog");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Blog
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("projects");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/projects"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Projects
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("about");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     About
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("newsletter");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/newsletter"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Newsletter
-                  </span>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -513,13 +531,10 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
         {/* Back Button */}
         <section className="blog-post-back page-grid">
           <div className="container">
-            <button
-              className="back-button"
-              onClick={() => setCurrentPage("blog")}
-            >
+            <Link to="/" className="back-button">
               <img src={arrowLeftIcon} alt="Back" className="back-icon" />
               Back to Blog
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -660,8 +675,9 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
                     {allBlogPosts
                       .filter((post) => post.id !== "4")
                       .map((post) => (
-                        <div
+                        <Link
                           key={post.id}
+                          to={`/blog/${post.id}`}
                           className="blog-card sidebar-post-card"
                         >
                           <div className="card-image">
@@ -696,7 +712,7 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
                               ))}
                             </div>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                   </div>
                 </div>
@@ -724,40 +740,40 @@ function BlogPost({ darkMode, setDarkMode, setCurrentPage, postId }) {
                   <h4 className="footer-heading">Navigation</h4>
                   <ul className="footer-nav">
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("blog")}
+                        to="/"
                         style={{ cursor: "pointer" }}
                       >
                         Blog
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("projects")}
+                        to="/projects"
                         style={{ cursor: "pointer" }}
                       >
                         Projects
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("about")}
+                        to="/about"
                         style={{ cursor: "pointer" }}
                       >
                         About
-                      </span>
+                      </Link>
                     </li>
                     <li>
-                      <span
+                      <Link
                         className="footer-link"
-                        onClick={() => setCurrentPage("newsletter")}
+                        to="/newsletter"
                         style={{ cursor: "pointer" }}
                       >
                         Newsletter
-                      </span>
+                      </Link>
                     </li>
                   </ul>
                 </div>

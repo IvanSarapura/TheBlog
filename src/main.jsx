@@ -1,10 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+import App from "./App.jsx";
+import About from "./About.jsx";
+import Projects from "./Projects.jsx";
+import Newsletter from "./Newsletter.jsx";
+import BlogPost from "./BlogPost.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/blog/:postId" element={<BlogPost />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
+);

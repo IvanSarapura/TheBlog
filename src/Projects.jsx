@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -10,15 +11,20 @@ import image14 from "./assets/Image-14.png";
 import image15 from "./assets/Image-15.png";
 import arrowIcon from "./assets/Arrow-up-right.svg";
 
-function Projects({ darkMode, setDarkMode, setCurrentPage }) {
+function Projects() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : false;
+  });
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   // Function to navigate to a specific project
   const navigateToProject = (projectId) => {
-    // For now, we'll just log the project ID
-    // In the future, this could navigate to individual project pages
     console.log(`Navigating to project: ${projectId}`);
   };
 
@@ -127,36 +133,44 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("blog")}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Blog
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${true ? "active" : ""}`}
-                  onClick={() => setCurrentPage("projects")}
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Projects
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("about")}
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   About
-                </span>
+                </NavLink>
               </li>
               <li>
-                <span
-                  className={`nav-link ${false ? "active" : ""}`}
-                  onClick={() => setCurrentPage("newsletter")}
+                <NavLink
+                  to="/newsletter"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                 >
                   Newsletter
-                </span>
+                </NavLink>
               </li>
             </ul>
             <div className="theme-toggle">
@@ -251,48 +265,48 @@ function Projects({ darkMode, setDarkMode, setCurrentPage }) {
 
               <ul className="mobile-menu">
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("blog");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Blog
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${true ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("projects");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/projects"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Projects
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("about");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     About
-                  </span>
+                  </NavLink>
                 </li>
                 <li>
-                  <span
-                    className={`mobile-nav-link ${false ? "active" : ""}`}
-                    onClick={() => {
-                      setCurrentPage("newsletter");
-                      setMobileMenuOpen(false);
-                    }}
+                  <NavLink
+                    to="/newsletter"
+                    className={({ isActive }) =>
+                      `mobile-nav-link ${isActive ? "active" : ""}`
+                    }
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Newsletter
-                  </span>
+                  </NavLink>
                 </li>
               </ul>
             </div>
