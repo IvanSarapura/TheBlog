@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -32,6 +32,20 @@ function BlogPost() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = (path) => {
+    if (path === "/")
+      return location.pathname === "/" || location.pathname.startsWith("/blog");
+    return location.pathname.startsWith(path);
+  };
+  const go = (path) => navigate(path);
+  const onKeyGo = (e, path) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navigate(path);
+    }
+  };
   const params = useParams();
   const postId = params.postId || "1";
   const [darkMode, setDarkMode] = useState(() => {
@@ -346,44 +360,52 @@ function BlogPost() {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${isActive("/") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/")}
+                  onKeyDown={(e) => onKeyGo(e, "/")}
                 >
                   Blog
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${
+                    isActive("/projects") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/projects")}
+                  onKeyDown={(e) => onKeyGo(e, "/projects")}
                 >
                   Projects
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${isActive("/about") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/about")}
+                  onKeyDown={(e) => onKeyGo(e, "/about")}
                 >
                   About
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/newsletter"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${
+                    isActive("/newsletter") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/newsletter")}
+                  onKeyDown={(e) => onKeyGo(e, "/newsletter")}
                 >
                   Newsletter
-                </NavLink>
+                </span>
               </li>
             </ul>
             <div className="theme-toggle">
@@ -478,48 +500,68 @@ function BlogPost() {
 
               <ul className="mobile-menu">
                 <li>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/")}
                   >
                     Blog
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/projects"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/projects") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/projects");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/projects")}
                   >
                     Projects
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/about"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/about") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/about");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/about")}
                   >
                     About
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/newsletter"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/newsletter") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/newsletter");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/newsletter")}
                   >
                     Newsletter
-                  </NavLink>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -675,10 +717,10 @@ function BlogPost() {
                     {allBlogPosts
                       .filter((post) => post.id !== "4")
                       .map((post) => (
-                        <Link
+                        <div
                           key={post.id}
-                          to={`/blog/${post.id}`}
-                          className="blog-card sidebar-post-card"
+                          className="blog-card sidebar-post-card clickable-card"
+                          onClick={() => go(`/blog/${post.id}`)}
                         >
                           <div className="card-image">
                             <img src={post.image} alt={post.title} />
@@ -712,7 +754,7 @@ function BlogPost() {
                               ))}
                             </div>
                           </div>
-                        </Link>
+                        </div>
                       ))}
                   </div>
                 </div>

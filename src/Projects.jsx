@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
 import sunIcon from "./assets/sun.svg";
 import moonIcon from "./assets/moon-dark.svg";
@@ -15,6 +15,20 @@ function Projects() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = (path) => {
+    if (path === "/")
+      return location.pathname === "/" || location.pathname.startsWith("/blog");
+    return location.pathname.startsWith(path);
+  };
+  const go = (path) => navigate(path);
+  const onKeyGo = (e, path) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navigate(path);
+    }
+  };
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("theme");
     return saved ? saved === "dark" : false;
@@ -133,44 +147,52 @@ function Projects() {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${isActive("/") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/")}
+                  onKeyDown={(e) => onKeyGo(e, "/")}
                 >
                   Blog
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${
+                    isActive("/projects") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/projects")}
+                  onKeyDown={(e) => onKeyGo(e, "/projects")}
                 >
                   Projects
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${isActive("/about") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/about")}
+                  onKeyDown={(e) => onKeyGo(e, "/about")}
                 >
                   About
-                </NavLink>
+                </span>
               </li>
               <li>
-                <NavLink
-                  to="/newsletter"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <span
+                  className={`nav-link ${
+                    isActive("/newsletter") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/newsletter")}
+                  onKeyDown={(e) => onKeyGo(e, "/newsletter")}
                 >
                   Newsletter
-                </NavLink>
+                </span>
               </li>
             </ul>
             <div className="theme-toggle">
@@ -265,48 +287,68 @@ function Projects() {
 
               <ul className="mobile-menu">
                 <li>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/")}
                   >
                     Blog
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/projects"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/projects") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/projects");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/projects")}
                   >
                     Projects
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/about"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/about") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/about");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/about")}
                   >
                     About
-                  </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink
-                    to="/newsletter"
-                    className={({ isActive }) =>
-                      `mobile-nav-link ${isActive ? "active" : ""}`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/newsletter") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/newsletter");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/newsletter")}
                   >
                     Newsletter
-                  </NavLink>
+                  </span>
                 </li>
               </ul>
             </div>
