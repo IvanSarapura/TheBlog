@@ -5930,6 +5930,26 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Align timeline marker slightly lower on EXPERIENCE only */
+.experience-layout .education-timeline .timeline-marker {
+  top: 5px;
+}
+
+/* Start the vertical line a bit lower in EXPERIENCE to hide the tip above the marker */
+.experience-layout .education-timeline::before {
+  top: 16px;
+}
+
+/* Align timeline marker slightly lower on EDUCATION only */
+.education-layout .education-timeline .timeline-marker {
+  top: 5px;
+}
+
+/* Start the vertical line a bit lower in EDUCATION to hide the tip above the marker */
+.education-layout .education-timeline::before {
+  top: 16px;
+}
+
 .timeline-title {
   flex: 1;
 }
@@ -6677,15 +6697,29 @@ body {
     margin-bottom: 3rem;
   }
 
+  /* Tablet: keep timeline line and marker well aligned */
   .education-timeline::before {
-    left: 20px;
+    left: 10px;
   }
 
   .education-timeline-item {
-    padding-left: 60px;
+    padding-left: 2.5rem;
     margin-bottom: 2rem;
   }
 
+  .timeline-marker {
+    left: 0;
+  }
+
+  /* Stack header blocks to avoid overflow on tablet */
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .timeline-badges {
+    align-self: flex-start;
+  }
   .timeline-dot {
     width: 16px;
     height: 16px;
