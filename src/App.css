@@ -4831,6 +4831,23 @@ body {
   gap: 1rem;
 }
 
+/* Ensure EXPERIENCE period sits to the right inside the timeline, like Education */
+.education-timeline .experience-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 0.5rem;
+}
+.education-timeline .experience-main-info {
+  grid-column: 1;
+  min-width: 0;
+}
+.education-timeline .experience-period {
+  grid-column: 2;
+  justify-self: end;
+  white-space: nowrap;
+}
+
 .experience-main-info {
   flex: 1;
 }
@@ -6720,6 +6737,47 @@ body {
   .timeline-badges {
     align-self: flex-start;
   }
+
+  /* EXPERIENCE: keep period on the right of main info on tablet */
+  .experience-layout .experience-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .experience-layout .experience-main-info {
+    flex: 1 1 auto;
+  }
+  .experience-layout .experience-period {
+    align-self: auto;
+    margin-top: 0;
+    margin-left: auto;
+  }
+  /* Reorder EDUCATION blocks for tablet: stats → timeline → certifications */
+  .education-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "edu-stats"
+      "edu-timeline"
+      "edu-certs";
+  }
+  .education-main,
+  .education-features,
+  .education-sidebar {
+    display: contents;
+  }
+  .education-stats {
+    grid-area: edu-stats;
+  }
+  .education-timeline {
+    grid-area: edu-timeline;
+  }
+  .education-certifications {
+    grid-area: edu-certs;
+  }
   .timeline-dot {
     width: 16px;
     height: 16px;
@@ -6834,10 +6892,21 @@ body {
     margin-bottom: 1rem;
   }
 
-  .experience-header {
-    flex-direction: column;
-    gap: 0.5rem;
+  /* EXPERIENCE: keep period on the right of main info on mobile */
+  .experience-layout .experience-header {
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .experience-layout .experience-main-info {
+    flex: 1 1 auto;
+  }
+  .experience-layout .experience-period {
+    align-self: auto;
+    margin-top: 0;
+    margin-left: auto;
   }
 
   /* EXPERIENCE timeline header responsive */
@@ -6917,8 +6986,29 @@ body {
   }
 
   .experience-layout {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    grid-template-areas:
+      "exp-stats"
+      "exp-timeline"
+      "exp-sidebar";
+  }
+
+  /* Reorder EXPERIENCE blocks on mobile: stats → timeline → featured */
+  .experience-main,
+  .experience-sidebar {
+    display: contents;
+  }
+
+  .experience-stats {
+    grid-area: exp-stats;
+  }
+  .experience-layout .education-timeline {
+    grid-area: exp-timeline;
+  }
+  .experience-featured-projects {
+    grid-area: exp-sidebar;
   }
 
   .experience-main {
@@ -6963,6 +7053,15 @@ body {
   .education-timeline-item {
     padding-left: 1rem;
     margin-bottom: 2rem;
+  }
+
+  /* Reduce extra space below timeline on mobile/tablet */
+  .education-timeline {
+    margin-bottom: 0.5rem;
+  }
+
+  .education-layout {
+    gap: 1.25rem;
   }
 
   .timeline-marker {
@@ -7064,7 +7163,7 @@ body {
   }
 
   .education-layout {
-    gap: 1.5rem;
+    gap: 0.75rem;
   }
 
   .education-features {
@@ -7073,6 +7172,7 @@ body {
 
   .education-timeline {
     padding-left: 0.5rem;
+    margin-bottom: 0;
   }
 
   .education-timeline-item {
@@ -7175,6 +7275,19 @@ body {
     font-size: 1.5rem;
   }
 
+  /* EXPERIENCE (mobile): place period below company info inside timeline */
+  .education-timeline .experience-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .education-timeline .experience-period {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+
   .education-stat-number {
     font-size: 1.5rem;
   }
@@ -7206,5 +7319,32 @@ body {
 
   .project-description {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reorder EDUCATION blocks for mobile: stats → timeline → certifications */
+  .education-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "edu-stats"
+      "edu-timeline"
+      "edu-certs";
+  }
+  .education-main,
+  .education-features,
+  .education-sidebar {
+    display: contents;
+  }
+  .education-stats {
+    grid-area: edu-stats;
+  }
+  .education-timeline {
+    grid-area: edu-timeline;
+  }
+  .education-certifications {
+    grid-area: edu-certs;
   }
 }
