@@ -573,10 +573,16 @@ function BlogPost() {
         {/* Back Button */}
         <section className="blog-post-back page-grid">
           <div className="container">
-            <Link to="/" className="back-button">
+            <div
+              role="button"
+              tabIndex={0}
+              className="back-button"
+              onClick={() => go("/")}
+              onKeyDown={(e) => onKeyGo(e, "/")}
+            >
               <img src={arrowLeftIcon} alt="Back" className="back-icon" />
-              Back to Blog
-            </Link>
+              <span>Back to Blog</span>
+            </div>
           </div>
         </section>
 

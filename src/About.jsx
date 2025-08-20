@@ -153,65 +153,138 @@ function About() {
       company: "TechCorp",
       position: "Senior Frontend Developer",
       period: "2022 - Present",
+      location: "San Francisco, CA",
+      icon: "🚀",
       description:
         "Leading the development of user-facing features for a SaaS platform serving 2M+ users. Mentored junior developers and implemented best practices.",
-      technologies: ["React", "TypeScript", "Node.js", "AWS"],
+      responsibilities: [
+        "Led development of core platform features",
+        "Mentored 5 junior developers",
+        "Implemented performance optimizations",
+        "Established coding standards and best practices",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "AWS",
+        "GraphQL",
+        "Jest",
+      ],
       achievements: [
-        "Increased performance by 40%",
-        "Led team of 5 developers",
-        "Implemented CI/CD pipeline",
+        "Increased application performance by 40%",
+        "Led successful migration to TypeScript",
+        "Implemented comprehensive CI/CD pipeline",
+        "Reduced bug reports by 60%",
       ],
     },
     {
       company: "DesignStudio",
       position: "UI/UX Designer & Developer",
       period: "2020 - 2022",
+      location: "New York, NY",
+      icon: "🎨",
       description:
         "Designed and developed responsive web applications for clients across various industries. Collaborated with cross-functional teams to deliver exceptional user experiences.",
-      technologies: ["Figma", "React", "JavaScript", "CSS3"],
+      responsibilities: [
+        "Designed user interfaces and experiences",
+        "Developed responsive web applications",
+        "Collaborated with product managers and stakeholders",
+        "Conducted user research and usability testing",
+      ],
+      technologies: [
+        "Figma",
+        "React",
+        "JavaScript",
+        "CSS3",
+        "Sketch",
+        "InVision",
+      ],
       achievements: [
-        "Designed 20+ client projects",
+        "Designed 20+ successful client projects",
         "Improved conversion rates by 25%",
-        "Created design system",
+        "Created comprehensive design system",
+        "Won 3 industry design awards",
       ],
     },
     {
       company: "StartupXYZ",
       position: "Full Stack Developer",
       period: "2018 - 2020",
+      location: "Austin, TX",
+      icon: "⚡",
       description:
         "Built and maintained web applications from concept to deployment. Worked closely with product managers to implement new features and improve existing functionality.",
-      technologies: ["JavaScript", "Python", "PostgreSQL", "Docker"],
+      responsibilities: [
+        "Developed full-stack web applications",
+        "Collaborated with product managers",
+        "Implemented new features and improvements",
+        "Maintained and optimized existing systems",
+      ],
+      technologies: [
+        "JavaScript",
+        "Python",
+        "PostgreSQL",
+        "Docker",
+        "Redis",
+        "MongoDB",
+      ],
       achievements: [
         "Built MVP in 3 months",
-        "Reduced bugs by 60%",
-        "Implemented automated testing",
+        "Reduced production bugs by 60%",
+        "Implemented comprehensive automated testing",
+        "Scaled application to handle 100K+ users",
       ],
     },
     {
       company: "DigitalAgency",
       position: "Semi Senior Frontend Developer",
       period: "2017 - 2018",
+      location: "Los Angeles, CA",
+      icon: "💻",
       description:
         "Developed and maintained multiple client websites using modern frontend technologies. Collaborated with designers and backend developers to deliver high-quality products.",
-      technologies: ["React", "Vue.js", "JavaScript", "Sass"],
+      responsibilities: [
+        "Developed client websites and applications",
+        "Collaborated with design and backend teams",
+        "Implemented responsive designs",
+        "Optimized website performance",
+      ],
+      technologies: ["React", "Vue.js", "JavaScript", "Sass", "Webpack", "Git"],
       achievements: [
-        "Delivered 15+ client projects",
+        "Delivered 15+ successful client projects",
         "Improved code quality standards",
         "Mentored 2 junior developers",
+        "Reduced page load times by 30%",
       ],
     },
     {
       company: "WebSolutions",
       position: "Junior Frontend Developer",
       period: "2016 - 2017",
+      location: "Seattle, WA",
+      icon: "🌱",
       description:
         "Started my professional journey building responsive websites and learning modern web development practices. Worked on various projects under senior developer supervision.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "jQuery"],
+      responsibilities: [
+        "Built responsive websites",
+        "Learned modern development workflows",
+        "Contributed to team projects",
+        "Maintained existing client websites",
+      ],
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "jQuery",
+        "Bootstrap",
+        "PHP",
+      ],
       achievements: [
         "Built 10+ responsive websites",
         "Learned modern development workflows",
         "Contributed to team projects",
+        "Earned promotion to Semi Senior role",
       ],
     },
   ];
@@ -905,20 +978,139 @@ function About() {
             {/* Experience Section */}
             {activeTab === "experience" && (
               <div className="about-content-section">
-                <h2 className="section-title">Professional Experience</h2>
                 <div className="experience-layout">
                   <div className="experience-main">
-                    <div className="experience-features">
+                    <div className="education-timeline">
                       {experience.map((job, index) => (
-                        <div key={index} className="feature-item">
-                          <div className="feature-content">
-                            <h4 className="feature-title">{job.position}</h4>
-                            <p className="feature-description">
-                              {job.company} • {job.period}
-                            </p>
-                            <p className="feature-description">
+                        <div key={index} className="education-timeline-item">
+                          <div className="timeline-marker">
+                            <div className="marker-dot"></div>
+                            <div className="marker-line"></div>
+                          </div>
+                          <div className="experience-item">
+                            <div className="experience-header">
+                              <div className="experience-main-info">
+                                <h3 className="experience-position">
+                                  {job.position}
+                                </h3>
+                                <div className="experience-company-info">
+                                  <span className="experience-company">
+                                    {job.company}
+                                  </span>
+                                  <span className="experience-location">
+                                    {job.location}
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="experience-period">
+                                {job.period}
+                              </div>
+                            </div>
+
+                            <p className="experience-description">
                               {job.description}
                             </p>
+
+                            {Array.isArray(job.responsibilities) &&
+                            job.responsibilities.length > 0 &&
+                            Array.isArray(job.achievements) &&
+                            job.achievements.length > 0 ? (
+                              <div className="experience-sections-grid">
+                                <div className="experience-section">
+                                  <h4 className="section-subtitle">
+                                    Key Responsibilities
+                                  </h4>
+                                  <ul className="experience-list">
+                                    {job.responsibilities.map(
+                                      (responsibility, idx) => (
+                                        <li
+                                          key={idx}
+                                          className="experience-list-item"
+                                        >
+                                          {responsibility}
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                                <div className="experience-section">
+                                  <h4 className="section-subtitle">
+                                    Achievements
+                                  </h4>
+                                  <ul className="experience-list">
+                                    {job.achievements.map(
+                                      (achievement, idx) => (
+                                        <li
+                                          key={idx}
+                                          className="experience-list-item"
+                                        >
+                                          {achievement}
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              </div>
+                            ) : (
+                              <>
+                                {Array.isArray(job.responsibilities) &&
+                                  job.responsibilities.length > 0 && (
+                                    <div className="experience-section">
+                                      <h4 className="section-subtitle">
+                                        Key Responsibilities
+                                      </h4>
+                                      <ul className="experience-list">
+                                        {job.responsibilities.map(
+                                          (responsibility, idx) => (
+                                            <li
+                                              key={idx}
+                                              className="experience-list-item"
+                                            >
+                                              {responsibility}
+                                            </li>
+                                          )
+                                        )}
+                                      </ul>
+                                    </div>
+                                  )}
+                                {Array.isArray(job.achievements) &&
+                                  job.achievements.length > 0 && (
+                                    <div className="experience-section">
+                                      <h4 className="section-subtitle">
+                                        Achievements
+                                      </h4>
+                                      <ul className="experience-list">
+                                        {job.achievements.map(
+                                          (achievement, idx) => (
+                                            <li
+                                              key={idx}
+                                              className="experience-list-item"
+                                            >
+                                              {achievement}
+                                            </li>
+                                          )
+                                        )}
+                                      </ul>
+                                    </div>
+                                  )}
+                              </>
+                            )}
+
+                            {job.technologies &&
+                              job.technologies.length > 0 && (
+                                <div className="experience-section">
+                                  <h4 className="section-subtitle">
+                                    Technologies
+                                  </h4>
+                                  <div className="experience-technologies">
+                                    {job.technologies.map((tech, idx) => (
+                                      <span key={idx} className="tech-badge">
+                                        {tech}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
                           </div>
                         </div>
                       ))}
@@ -973,7 +1165,6 @@ function About() {
             {/* Education Section */}
             {activeTab === "education" && (
               <div className="about-content-section">
-                <h2 className="section-title">Education</h2>
                 <div className="education-layout">
                   <div className="education-main">
                     <div className="education-features">
