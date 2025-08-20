@@ -6806,6 +6806,17 @@ body {
     align-items: flex-start;
   }
 
+  /* EXPERIENCE timeline header responsive */
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .timeline-badges {
+    align-self: flex-start;
+  }
+
   .experience-period {
     align-self: flex-start;
   }
@@ -6819,11 +6830,11 @@ body {
   }
 
   .education-timeline::before {
-    left: 15px;
+    left: 1px;
   }
 
   .education-timeline-item {
-    padding-left: 50px;
+    padding-left: 2.5rem;
     margin-bottom: 1.5rem;
   }
 
@@ -6921,7 +6932,7 @@ body {
   }
 
   .timeline-marker {
-    left: -0.75rem;
+    left: 0;
   }
 
   .timeline-content {
@@ -7118,7 +7129,7 @@ body {
   }
 
   .experience-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
