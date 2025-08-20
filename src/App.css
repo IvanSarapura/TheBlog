@@ -5921,6 +5921,66 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+/* EDUCATION timeline - reorganized header and badges */
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-title {
+  flex: 1;
+}
+
+.timeline-submeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.period-badge {
+  font-size: 0.875rem;
+  color: var(--color-tertiary-text);
+  background: var(--color-background-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  white-space: nowrap;
+}
+
+.education-meta-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  background: var(--color-background-light);
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-secondary-text);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.meta-value {
+  font-size: 0.85rem;
+  color: var(--color-primary-text);
+}
+
 .timeline-content::before {
   content: "";
   position: absolute;
@@ -5938,13 +5998,13 @@ body {
 }
 
 .timeline-content:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-border-medium);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-border-light);
 }
 
 .timeline-content:hover::before {
-  opacity: 1;
+  opacity: 0;
 }
 
 .education-degree {

@@ -1176,30 +1176,29 @@ function About() {
                               <div className="marker-line"></div>
                             </div>
                             <div className="timeline-content">
-                              <div className="education-degree">
-                                <h3 className="degree-title">{edu.degree}</h3>
-                                <div className="degree-meta">
-                                  <span className="institution">
-                                    {edu.institution}
-                                  </span>
-                                  <span className="period">{edu.period}</span>
+                              <div className="timeline-header">
+                                <div className="timeline-title">
+                                  <h3 className="degree-title">{edu.degree}</h3>
+                                  <div className="timeline-submeta">
+                                    <span className="institution">
+                                      {edu.institution}
+                                    </span>
+                                    {edu.location && (
+                                      <span className="education-location">
+                                        {edu.location}
+                                      </span>
+                                    )}
+                                  </div>
                                 </div>
-                                <div className="degree-gpa">
-                                  <span className="gpa-label">GPA</span>
-                                  <span className="gpa-value">{edu.gpa}</span>
-                                </div>
+                                <div className="period-badge">{edu.period}</div>
                               </div>
-                              <div className="education-details">
-                                <p className="degree-description">
-                                  {edu.description}
-                                </p>
-                                <div className="field-info">
-                                  <span className="field-label">Field</span>
-                                  <span className="field-value">
-                                    {edu.field}
-                                  </span>
-                                </div>
-                              </div>
+
+                              <p className="degree-description">
+                                {edu.description}
+                              </p>
+
+                              {/* removed GPA and Field badges per request */}
+
                               <div className="education-achievements">
                                 {edu.achievements.map((achievement, idx) => (
                                   <div key={idx} className="achievement-tag">
