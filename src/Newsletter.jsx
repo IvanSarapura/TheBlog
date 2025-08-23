@@ -18,7 +18,8 @@ function Newsletter() {
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => {
-    if (path === "/") return location.pathname === "/" || location.pathname.startsWith("/blog");
+    if (path === "/")
+      return location.pathname === "/" || location.pathname.startsWith("/blog");
     return location.pathname.startsWith(path);
   };
   const go = (path) => navigate(path);
@@ -35,13 +36,6 @@ function Newsletter() {
   useEffect(() => {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
-
-  // Function to navigate to a specific newsletter
-  const navigateToNewsletter = (newsletterId) => {
-    // For now, we'll just log the newsletter ID
-    // In the future, this could navigate to individual newsletter pages
-    console.log(`Navigating to newsletter: ${newsletterId}`);
-  };
 
   // Newsletter data with IDs
   const newsletters = [
@@ -68,6 +62,11 @@ function Newsletter() {
       description: "Deep dive into user experience research methodologies.",
     },
   ];
+
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -119,22 +118,50 @@ function Newsletter() {
           <div className="nav-right desktop-nav">
             <ul className="nav-menu">
               <li>
-                <span className={`nav-link ${isActive("/") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => go("/")} onKeyDown={(e) => onKeyGo(e, "/")}>
+                <span
+                  className={`nav-link ${isActive("/") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/")}
+                  onKeyDown={(e) => onKeyGo(e, "/")}
+                >
                   Blog
                 </span>
               </li>
               <li>
-                <span className={`nav-link ${isActive("/projects") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => go("/projects")} onKeyDown={(e) => onKeyGo(e, "/projects")}>
+                <span
+                  className={`nav-link ${
+                    isActive("/projects") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/projects")}
+                  onKeyDown={(e) => onKeyGo(e, "/projects")}
+                >
                   Projects
                 </span>
               </li>
               <li>
-                <span className={`nav-link ${isActive("/about") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => go("/about")} onKeyDown={(e) => onKeyGo(e, "/about")}>
+                <span
+                  className={`nav-link ${isActive("/about") ? "active" : ""}`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/about")}
+                  onKeyDown={(e) => onKeyGo(e, "/about")}
+                >
                   About
                 </span>
               </li>
               <li>
-                <span className={`nav-link ${isActive("/newsletter") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => go("/newsletter")} onKeyDown={(e) => onKeyGo(e, "/newsletter")}>
+                <span
+                  className={`nav-link ${
+                    isActive("/newsletter") ? "active" : ""
+                  }`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => go("/newsletter")}
+                  onKeyDown={(e) => onKeyGo(e, "/newsletter")}
+                >
                   Newsletter
                 </span>
               </li>
@@ -231,22 +258,66 @@ function Newsletter() {
 
               <ul className="mobile-menu">
                 <li>
-                  <span className={`mobile-nav-link ${isActive("/") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => { go("/"); setMobileMenuOpen(false); }} onKeyDown={(e) => onKeyGo(e, "/")}>
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/")}
+                  >
                     Blog
                   </span>
                 </li>
                 <li>
-                  <span className={`mobile-nav-link ${isActive("/projects") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => { go("/projects"); setMobileMenuOpen(false); }} onKeyDown={(e) => onKeyGo(e, "/projects")}>
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/projects") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/projects");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/projects")}
+                  >
                     Projects
                   </span>
                 </li>
                 <li>
-                  <span className={`mobile-nav-link ${isActive("/about") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => { go("/about"); setMobileMenuOpen(false); }} onKeyDown={(e) => onKeyGo(e, "/about")}>
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/about") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/about");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/about")}
+                  >
                     About
                   </span>
                 </li>
                 <li>
-                  <span className={`mobile-nav-link ${isActive("/newsletter") ? "active" : ""}`} role="link" tabIndex={0} onClick={() => { go("/newsletter"); setMobileMenuOpen(false); }} onKeyDown={(e) => onKeyGo(e, "/newsletter")}>
+                  <span
+                    className={`mobile-nav-link ${
+                      isActive("/newsletter") ? "active" : ""
+                    }`}
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => {
+                      go("/newsletter");
+                      setMobileMenuOpen(false);
+                    }}
+                    onKeyDown={(e) => onKeyGo(e, "/newsletter")}
+                  >
                     Newsletter
                   </span>
                 </li>
@@ -320,7 +391,10 @@ function Newsletter() {
               {/* Row 1 - Copied from Blog page */}
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToNewsletter("1")}
+                onClick={() => {
+                  // TODO: Implement newsletter navigation
+                  console.log("Navigate to newsletter 1");
+                }}
               >
                 <div className="card-image">
                   <img
@@ -360,7 +434,10 @@ function Newsletter() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToNewsletter("2")}
+                onClick={() => {
+                  // TODO: Implement newsletter navigation
+                  console.log("Navigate to newsletter 2");
+                }}
               >
                 <div className="card-image">
                   <img
@@ -399,7 +476,10 @@ function Newsletter() {
 
               <div
                 className="blog-card post-card clickable-card"
-                onClick={() => navigateToNewsletter("3")}
+                onClick={() => {
+                  // TODO: Implement newsletter navigation
+                  console.log("Navigate to newsletter 3");
+                }}
               >
                 <div className="card-image">
                   <img

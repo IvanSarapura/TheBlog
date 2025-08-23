@@ -29,6 +29,12 @@
   --color-background-dark: #333333;
   --color-background-disabled: #cccccc;
   --close-icon-filter: brightness(0) saturate(100%);
+
+  /* Theme transition timing */
+  --theme-transition-duration: 0.6s;
+  --theme-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --theme-transition: all var(--theme-transition-duration)
+    var(--theme-transition-timing);
 }
 
 /* Dark Mode Variables */
@@ -91,7 +97,9 @@
   font-weight: 400;
   color: var(--color-primary-text);
   background-color: var(--color-background-white);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--theme-transition-duration)
+      var(--theme-transition-timing),
+    color var(--theme-transition-duration) var(--theme-transition-timing);
 }
 
 /* Dark mode color scheme */
@@ -99,10 +107,12 @@
   color-scheme: dark;
 }
 
-/* Global transitions for theme changes */
+/* Global transitions for theme changes - synchronized */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
+  transition: background-color var(--theme-transition-duration)
+      var(--theme-transition-timing),
+    color var(--theme-transition-duration) var(--theme-transition-timing),
+    border-color var(--theme-transition-duration) var(--theme-transition-timing);
 }
 
 /* Prevent horizontal overflow globally */
@@ -169,7 +179,12 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--theme-transition-duration)
+      var(--theme-transition-timing),
+    background-color var(--theme-transition-duration)
+      var(--theme-transition-timing),
+    border-bottom-color var(--theme-transition-duration)
+      var(--theme-transition-timing);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -226,7 +241,8 @@ body {
   font-weight: 400;
   font-size: 1rem;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color var(--theme-transition-duration)
+    var(--theme-transition-timing);
   display: inline-block;
   cursor: pointer;
 }
@@ -239,7 +255,8 @@ body {
   width: 0;
   height: 1px;
   background-color: var(--color-primary-text);
-  transition: width 0.3s ease;
+  transition: width var(--theme-transition-duration)
+    var(--theme-transition-timing);
 }
 
 .nav-link:hover {
@@ -282,7 +299,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--theme-transition);
   transform: scale(1);
   box-shadow: none;
 }
@@ -316,13 +333,13 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
 }
 
 .switch-icon {
   width: 20px;
   height: 20px;
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
 }
 
 .switch-thumb {
@@ -333,7 +350,7 @@ body {
   border-radius: 50%;
   top: 6px;
   left: 6px;
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
   z-index: 2;
 }
 
@@ -397,7 +414,13 @@ body {
 
 /* Ensure mobile menu is not affected by overflow */
 .mobile-menu-overlay {
-  overflow: visible !important;
+  overflow: visible;
+}
+
+/* Higher specificity to override global styles */
+html .mobile-menu-overlay,
+body .mobile-menu-overlay {
+  overflow: visible;
 }
 
 .desktop-nav {
@@ -433,7 +456,7 @@ body {
   width: 20px;
   height: 2px;
   background-color: var(--color-primary-text);
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
   transform-origin: center;
 }
 
@@ -466,7 +489,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
   z-index: 999999;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -7348,3 +7371,32 @@ body {
     grid-area: edu-certs;
   }
 }
+
+/* ========================================
+   THEME TRANSITION SYSTEM
+   ========================================
+   
+   This project uses a synchronized theme transition system:
+   
+   1. All theme-related transitions use the same duration (0.6s) and timing function (cubic-bezier)
+   2. CSS variables are used for consistency:
+      - --theme-transition-duration: 0.6s
+      - --theme-transition-timing: cubic-bezier(0.4, 0, 0.2, 1)
+      - --theme-transition: all var(--theme-transition-duration) var(--theme-transition-timing)
+   
+   3. Components with synchronized transitions:
+      - Global elements (*)
+      - App container (.app)
+      - Header (.header)
+      - Toggle switch (.toggle-switch)
+      - Navigation links (.nav-link)
+      - Mobile menu (.mobile-menu-overlay)
+      - Hamburger menu (.hamburger-line)
+   
+   4. Benefits:
+      - Smooth, synchronized animations across all components
+      - Easy to modify timing by changing CSS variables
+      - No use of !important to maintain animation integrity
+      - Consistent user experience
+   
+   ======================================== */

@@ -56,6 +56,11 @@ function BlogPost() {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   // Handle navbar visibility on scroll
   useEffect(() => {
     let ticking = false;

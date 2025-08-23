@@ -37,11 +37,6 @@ function Projects() {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  // Function to navigate to a specific project
-  const navigateToProject = (projectId) => {
-    console.log(`Navigating to project: ${projectId}`);
-  };
-
   // Projects data with IDs
   const projects = [
     {
@@ -96,6 +91,11 @@ function Projects() {
       categories: ["development", "ui", "ecommerce"],
     },
   ];
+
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Handle navbar visibility on scroll
   useEffect(() => {
@@ -370,7 +370,10 @@ function Projects() {
             <div className="projects-row featured-layout">
               <div
                 className="project-card featured clickable-card"
-                onClick={() => navigateToProject("1")}
+                onClick={() => {
+                  // TODO: Implement project navigation
+                  console.log("Navigate to project 1");
+                }}
               >
                 <div className="card-image">
                   <img src={image13} alt="Featured Project" />
@@ -427,7 +430,10 @@ function Projects() {
               <div className="small-cards-column">
                 <div
                   className="project-card small clickable-card"
-                  onClick={() => navigateToProject("2")}
+                  onClick={() => {
+                    // TODO: Implement project navigation
+                    console.log("Navigate to project 2");
+                  }}
                 >
                   <div className="card-image">
                     <img src={image11} alt="Project 1" />
@@ -462,7 +468,10 @@ function Projects() {
 
                 <div
                   className="project-card small clickable-card"
-                  onClick={() => navigateToProject("3")}
+                  onClick={() => {
+                    // TODO: Implement project navigation
+                    console.log("Navigate to project 3");
+                  }}
                 >
                   <div className="card-image">
                     <img src={image12} alt="Project 2" />
@@ -502,7 +511,10 @@ function Projects() {
             <div className="projects-row">
               <div
                 className="project-card clickable-card"
-                onClick={() => navigateToProject("4")}
+                onClick={() => {
+                  // TODO: Implement project navigation
+                  console.log("Navigate to project 4");
+                }}
               >
                 <div className="card-image">
                   <img src={image14} alt="Project 4" />
@@ -537,7 +549,10 @@ function Projects() {
 
               <div
                 className="project-card clickable-card"
-                onClick={() => navigateToProject("5")}
+                onClick={() => {
+                  // TODO: Implement project navigation
+                  console.log("Navigate to project 5");
+                }}
               >
                 <div className="card-image">
                   <img src={image15} alt="Project 5" />
@@ -575,7 +590,10 @@ function Projects() {
             <div className="projects-row">
               <div
                 className="project-card clickable-card"
-                onClick={() => navigateToProject("6")}
+                onClick={() => {
+                  // TODO: Implement project navigation
+                  console.log("Navigate to project 6");
+                }}
               >
                 <div className="card-image">
                   <img src={image14} alt="Project 6" />
@@ -610,7 +628,10 @@ function Projects() {
 
               <div
                 className="project-card clickable-card"
-                onClick={() => navigateToProject("7")}
+                onClick={() => {
+                  // TODO: Implement project navigation
+                  console.log("Navigate to project 7");
+                }}
               >
                 <div className="card-image">
                   <img src={image15} alt="Project 7" />
